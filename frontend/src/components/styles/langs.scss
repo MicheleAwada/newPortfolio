@@ -1,0 +1,47 @@
+
+.split-icon {
+    &:hover {
+        // gap: 4rem;
+        .split-right {
+            // transform: translate(100%, 0);
+            right: -1.5rem;
+        }
+        .split-left {
+            // transform: translate(-100%, 0);
+            left: -1.5rem;
+        }
+        .split-inner {
+            opacity: 1;
+        }
+
+
+    }
+    position: relative;
+    .split-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.6s;
+    }
+    .split-right {
+        display: block;
+        position: relative;
+        width:4rem;
+        right: 2rem;
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 75% 100%);
+        // transform: translate(0, 0);
+        transition: right 0.6s;
+    
+    }
+    .split-left {
+        display: block;
+        position: relative;
+        width:4rem;
+        left: 2rem;
+        clip-path: polygon(0 0, 25% 0, 75% 100%, 0 100%);
+        // transform: translate(0, 0);
+        transition: left 0.6s;
+    }
+}

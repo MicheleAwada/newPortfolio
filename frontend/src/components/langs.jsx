@@ -1,7 +1,5 @@
 import "./styles/langs.css"
 
-import NginxLogo from "../assets/images/langs/nginx-icon.svg"
-import TraefikLogo from "../assets/images/langs/traefikio-icon.svg"
 
 export default function Langs() {
     const languages_info = [
