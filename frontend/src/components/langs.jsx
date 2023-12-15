@@ -1,5 +1,7 @@
 import "./styles/langs.css"
 
+import layered_wave from "../assets/images/langs/layered-waves.svg"
+
 import NginxLogo from "../assets/images/langs/nginx-icon.svg"
 import TraefikLogo from "../assets/images/langs/traefikio-icon.svg"
 
@@ -71,24 +73,27 @@ export default function Langs() {
         },
     ]
     return (
-        <div className="bg-pink w-full">
 
-            <p className="text-center text-white text-4xl py-4">Languages I speak</p>
-            <div className="px-24 py-6 flex flex-wrap gap-y-10">
-                {languages_info.map((info) => (
-                    <div className="split-icon inline-flex h-auto">
-                        <div className="split-left-div">
-                            <img className="z-10 split-left" src={info.img} />
+        <>
+            <img src={layered_wave} alt="layered_wave" className="w-full bg-dark-white" />
+            <div className="bg-pink w-full">
+                <p className="text-center text-white text-4xl py-4">Languages I <span className="line-through decoration-dark-white">speak</span> code</p>
+                <div className="px-24 py-6 flex flex-wrap gap-y-10">
+                    {languages_info.map((info) => (
+                        <div className="split-icon inline-flex h-auto">
+                            <div className="split-left-div">
+                                <img className="z-10 split-left" src={info.img} />
+                            </div>
+                            <p className="split-inner text-3l font-bold text-white">
+                                {info.name}
+                            </p>
+                            <div className="split-right-div">
+                                <img className="z-10 split-right" src={info.img} />
+                            </div>
                         </div>
-                        <p className="split-inner text-3l font-bold text-white">
-                            {info.name}
-                        </p>
-                        <div className="split-right-div">
-                            <img className="z-10 split-right" src={info.img} />
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
