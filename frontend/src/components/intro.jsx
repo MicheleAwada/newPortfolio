@@ -45,18 +45,18 @@ function Bubble(props) {
 export default function Intro() {
     return (
         <>
-            <section className="bg-[#49108B] w-full h-[38rem] relative">
+            <section className="bg-dark-purple w-full h-[38rem] relative">
                 <div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
                     <div className="absolute top-0 right-0 py-8 px-12">
-                        <button className="bg-[#F3F8FF] text-[#7E30E1] rounded-full px-4 py-2 text-xl font-bold">Resume</button>
+                        <button className="bg-dark-white text-dark-purple rounded-full px-4 py-2 text-xl font-bold">Resume</button>
                     </div>
                     <Bubble className="absolute h-full p-6" />
                     <div className="z-10 flex flex-col gap-4">
-                        <h1 className="text-3xl text-white inverted-text">Hello, I'm <span className="text-[#E26EE5] bg-white px-3 py-[0.75] rounded-full">Michele</span></h1>
+                        <h1 className="text-3xl text-white inverted-text">Hello, I'm <span className="text-pink bg-white px-3 py-[0.75] rounded-full">Michele</span></h1>
                         <h1 className="text-3xl text-white inverted-text">a <span className="bg-amber-400 rounded-full px-3 py-[0.75]">Full Stack</span> Developer</h1>
                     </div>
                 </div>
-                <div className="h-[8rem] bg-transparent">
+                <div className="bg-transparent h-[8rem]">
                     <img src={wave} alt="wave" className="w-full absolute bottom-0 right-0" />
                 </div>
             </section>
