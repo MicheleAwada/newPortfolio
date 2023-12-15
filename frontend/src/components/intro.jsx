@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./styles/intro.css"
 
-import wave from "../assets/wave.svg"
+import wave from "../assets/intro/wave.svg"
 
 function Bubble(props) { 
     const {className, ...rest} = props
