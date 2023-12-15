@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import "./styles/intro.css"
 
+import wave from "../assets/wave.svg"
 
 function Bubble(props) { 
-    const {...rest} = props
+    const {className, ...rest} = props
     useEffect(() => {
         const tween = KUTE.fromTo(
           '#blob1',
@@ -17,29 +18,48 @@ function Bubble(props) {
           tween.stop();
         };
       }, []);
+
+    const fill_color = "#E26EE5"
+
     return (
-        <svg id="visual" {...rest} viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
+        <svg className={className+" "} {...rest} viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1">
-        <g transform="translate(446.2161423759699 305.71813932416933)">
-            <path id="blob1"
-                d="M167.3 -184.8C193.1 -141.4 174 -70.7 169.4 -4.6C164.9 61.5 174.7 123 148.9 167.4C123 211.7 61.5 238.9 9.7 229.2C-42.2 219.5 -84.4 173 -109.4 128.7C-134.4 84.4 -142.2 42.2 -154.9 -12.7C-167.7 -67.6 -185.3 -135.3 -160.3 -178.6C-135.3 -222 -67.6 -241 1.5 -242.5C70.7 -244 141.4 -228.1 167.3 -184.8"
-                fill="#BB004B"></path>
-        </g>
-        <g transform="translate(426.987231433047 303.5342640187103)">
-            <path id="blob2" style={{ visibility: "hidden" }}
-                d="M176.8 -160C224.5 -129.2 255.2 -64.6 248.2 -7.1C241.1 50.4 196.2 100.9 148.5 125.9C100.9 150.9 50.4 150.4 -10.1 160.6C-70.7 170.7 -141.4 191.4 -175.4 166.4C-209.4 141.4 -206.7 70.7 -196 10.7C-185.3 -49.3 -166.5 -98.5 -132.5 -129.4C-98.5 -160.2 -49.3 -172.6 7.7 -180.3C64.6 -187.9 129.2 -190.8 176.8 -160"
-                fill="#BB004B"></path>
-        </g>
-    </svg>
+            <g transform="translate(437.8564492604596 290.91628158509064)" className="h-full">
+                <path
+                id="blob1"
+                d="M216.6 -57.5C242.9 10.7 200.5 114.2 134.6 154.9C68.7 195.6 -20.8 173.7 -91.7 122.9C-162.6 72.2 -214.9 -7.3 -196.5 -64.6C-178.2 -121.9 -89.1 -156.9 3 -157.9C95.1 -158.9 190.2 -125.8 216.6 -57.5"
+                fill={fill_color}>
+                </path>
+            </g>
+            <g transform="translate(444.98569844362476 277.96369917215895)" className="h-full">
+                <path
+                    id="blob2"
+                    d="M183.7 -58.9C202.5 -1.8 157.7 76.8 87.1 130.6C16.5 184.5 -79.9 213.6 -131.6 177C-183.2 140.5 -190 38.3 -160.6 -33.4C-131.2 -105.1 -65.6 -146.3 8.4 -149.1C82.4 -151.8 164.8 -116.1 183.7 -58.9"
+                    fill={fill_color}
+                    style={{visibility: "hidden"}}>
+                </path>
+            </g>
+        </svg>
     )
 }
 export default function Intro() {
     return (
         <>
-            <div className="bg-cyan-700 w-full flex justify-center items-center h-[90vh] sm:h-[60vh] md:h-[90vh]  relative">
-                <Bubble className="absolute h-full p-2" />
-                <h1 className="text-3xl z-10 text-white">Hello, I'm Michele</h1>
-            </div>
+            <section className="bg-[#49108B] w-full h-[38rem] relative">
+                <div className=" w-full h-[30rem] flex justify-center items-center absolute">
+                    <div className="absolute top-0 right-0 py-8 px-12">
+                        <button className="bg-[#F3F8FF] text-[#7E30E1] rounded-full px-4 py-2 text-xl font-bold">Resume</button>
+                    </div>
+                    <Bubble className="absolute h-full p-6" />
+                    <div className="z-10 flex flex-col gap-4">
+                        <h1 className="text-3xl text-white inverted-text">Hello, I'm <span className="text-[#E26EE5] bg-white px-3 py-[0.75] rounded-full">Michele</span></h1>
+                        <h1 className="text-3xl text-white inverted-text">a <span className="bg-amber-400 rounded-full px-3 py-[0.75]">Full Stack</span> Developer</h1>
+                    </div>
+                </div>
+                <div className="h-[8rem] bg-transparent">
+                    <img src={wave} alt="wave" className="w-full absolute bottom-0 right-0" />
+                </div>
+            </section>
         </>
         
     )
