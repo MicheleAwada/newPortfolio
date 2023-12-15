@@ -46,7 +46,7 @@ export default function Intro() {
     return (
         <>
             <section className="bg-[#49108B] w-full h-[38rem] relative">
-                <div className=" w-full h-[30rem] flex justify-center items-center absolute">
+                <div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
                     <div className="absolute top-0 right-0 py-8 px-12">
                         <button className="bg-[#F3F8FF] text-[#7E30E1] rounded-full px-4 py-2 text-xl font-bold">Resume</button>
                     </div>
