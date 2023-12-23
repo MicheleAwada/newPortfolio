@@ -2,3 +2,12 @@
     mix-blend-mode: difference;
     
 }
+
+$intro-transition-aspect-ratio: 82.3/900;
+.intro-transition {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 0;
+    padding-bottom: percentage($intro-transition-aspect-ratio);
+}

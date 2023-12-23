@@ -112,7 +112,7 @@ export default function Intro() {
 			<section className="bg-dark-purple w-full h-[38rem] relative">
 				<div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
 					<div className="absolute top-0 right-0 py-8 px-12">
-						<a className="px-4 py-2 text-dark-purple bg-dark-white rounded-full text-2xl font-medium" target="_blank" href="https://youtube.com">
+						<a className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium" target="_blank" href="https://youtube.com">
                             Resume
                         </a>
 					</div>
@@ -133,13 +133,14 @@ export default function Intro() {
 						</h1>
 					</div>
 				</div>
-				<div className="bg-transparent h-[8rem]">
-					<img
-						src={wave}
+
+					{/* <img
+						style={{ backgroundImage: `url(${wave})`}}
 						alt="wave"
-						className="w-full absolute bottom-0 right-0"
-					/>
-				</div>
+						className="absolute bottom-0 right-0 intro-transition"
+					/> */}
+					<img src={wave} alt="wave" className="absolute bottom-0 right-0" />
+
 			</section>
 		</>
 	);
