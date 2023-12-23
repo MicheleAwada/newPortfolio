@@ -10,7 +10,17 @@ export default function Projects() {
             thumbnail: friendlyFurThumbnail
         },
         {
-            title: "Friendly Fur",
+            title: "Mug",
+            description: "Website Developer",
+            thumbnail: friendlyFurThumbnail
+        },
+        {
+            title: "Kentucky Game",
+            description: "Website Developer",
+            thumbnail: friendlyFurThumbnail
+        },
+        {
+            title: "Chess Game",
             description: "Website Developer",
             thumbnail: friendlyFurThumbnail
         },
@@ -23,7 +33,7 @@ export default function Projects() {
                     <div className="flip-card-inner">
                         <div className="flip-card-front flex flex-col rounded-md">
                             <div className="max-w-full">
-                                <img src={info.thumbnail} alt={info.title + " Thumbnail"} className="w-full" />
+                                <img src={info.thumbnail} alt={info.title + " Thumbnail"} className="w-full object-cover" />
                             </div>
                             <div className="w-full h-full bg-purple flex items-center justify-center">
                                 <p className="text-white text-2xl">{info.title}</p>
