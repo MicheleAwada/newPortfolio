@@ -30,8 +30,9 @@
         position: relative;
         width:4rem;
         right: 2rem;
-        clip-path: polygon(25% 0, 100% 0, 100% 100%, 75% 100%);
-        // transform: translate(0, 0);
+        border: 0 solid transparent;
+        outline: 0 solid transparent;
+        background-color: transparent;
         transition: right 0.6s;
     
     }
@@ -40,8 +41,24 @@
         position: relative;
         width:4rem;
         left: 2rem;
-        clip-path: polygon(0 0, 25% 0, 75% 100%, 0 100%);
-        // transform: translate(0, 0);
+        border: 0 solid transparent;
+        outline: 0 solid transparent;
+        background-color: transparent;
         transition: left 0.6s;
     }
+    .split-right-cut {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    }
+    .split-left-cut {
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+}
+
+$lang-transition-aspect-ratio: 203/900;
+.lang-transition {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: calc(percentage($lang-transition-aspect-ratio) - 1px);
 }

@@ -5,11 +5,26 @@ import layered_wave from "../assets/images/langs/layered-waves.svg"
 import NginxLogo from "../assets/images/langs/nginx-icon.svg"
 import TraefikLogo from "../assets/images/langs/traefikio-icon.svg"
 
+import ReactLogo1 from "../assets/images/langs/react-icon-1.svg"
+import ReactLogo2 from "../assets/images/langs/react-icon-2.svg"
+
+import Tailwind1 from "../assets/images/langs/tailwind-1.svg"
+import Tailwind2 from "../assets/images/langs/tailwind-2.svg"
+
+
+import Django1 from "../assets/images/langs/django-1.svg"
+import Django2 from "../assets/images/langs/django-2.svg"
+
+import Python1 from "../assets/images/langs/python-1.svg"
+import Python2 from "../assets/images/langs/python-2.svg"
+import { useEffect } from "react"
+
 export default function Langs() {
     const languages_info = [
         {
             name: "React",
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            img: ReactLogo1,
+            img2: ReactLogo2,
         },
         {
             name: "HTML",
@@ -20,28 +35,35 @@ export default function Langs() {
             img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
         },
         {
+            name: (<>Java<br />Script</>),
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        },
+        {
             name: "SASS",
             img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
         },
         {
             name: "Tailwind",
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+            img: Tailwind1,
+            img2: Tailwind2,
         },
         {
             name: "Bootstrap",
             img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
         },
         {
-            name: (<>Java<br />Script</>),
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            name: "Adobe illustrator",
+            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg",
         },
         {
             name: "Python",
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+            img: Python1,
+            img2: Python2,
         },
         {
             name: "Django",
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+            img: Django1,
+            img2: Django2,
         },
         {
             name: "Postgres",
@@ -67,20 +89,49 @@ export default function Langs() {
             name: "GitHub",
             img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
         },
-        {
-            name: "GitHub",
-            img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg",
-        },
     ]
-    return (
 
+    // useEffect(() => {
+    //     const loadImage = (imageSrc) => {
+    //       const img = new Image();
+    //       img.src = imageSrc;
+    
+    //       img.onload = function() {
+    //         const aspectRatio = img.width / img.height;
+    //         const containerRef = Document.getElementById("langs_transition_layered_waved");
+    //         if (containerRef.current) {
+    //           containerRef.current.style.height = `${
+    //             containerRef.current.offsetWidth / aspectRatio
+    //           }px`;
+    //         }
+    //       };
+    //     };
+    
+    //     loadImage(Python1); // Replace with your imported image variable
+    //     // or loadImage(Python2); depending on which image you want to use
+    
+    //   }, []);
+
+    return (
         <>
+            {/* <div style={{ backgroundImage: `url(${layered_wave})` }} alt="layered_wave" className="lang-transition w-full bg-dark-white" /> */}
             <img src={layered_wave} alt="layered_wave" className="w-full bg-dark-white" />
             <div className="bg-pink w-full">
                 <p className="text-center text-white text-4xl py-4">Languages I <span className="line-through decoration-dark-white">speak</span> code</p>
-                <div className="px-24 py-6 flex flex-wrap gap-y-10">
+                <div className="py-6 sm:px-4 sm:py-4 md:px-14 lg:px-16 flex flex-wrap gap-y-10 overflow-hidden">
                     {languages_info.map((info) => (
+                        info.img2 === undefined ? 
                         <div className="split-icon inline-flex h-auto">
+                            <div className="split-left-div">
+                                <img className="z-10 split-left split-left-cut" src={info.img} />
+                            </div>
+                            <p className="split-inner text-3l font-bold text-white">
+                                {info.name}
+                            </p>
+                            <div className="split-right-div">
+                                <img className="z-10 split-right split-right-cut" src={info.img} />
+                            </div>
+                        </div> : <div className="split-icon inline-flex h-auto">
                             <div className="split-left-div">
                                 <img className="z-10 split-left" src={info.img} />
                             </div>
@@ -88,12 +139,13 @@ export default function Langs() {
                                 {info.name}
                             </p>
                             <div className="split-right-div">
-                                <img className="z-10 split-right" src={info.img} />
+                                <img className="z-10 split-right" src={info.img2} />
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            <img src={layered_wave} alt="layered_wave" className="rotate-180 w-full bg-dark-white" />
         </>
     )
 }
