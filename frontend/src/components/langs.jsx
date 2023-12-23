@@ -117,11 +117,12 @@ export default function Langs() {
             {/* <div style={{ backgroundImage: `url(${layered_wave})` }} alt="layered_wave" className="lang-transition w-full bg-dark-white" /> */}
             <img src={layered_wave} alt="layered_wave" className="w-full bg-dark-white" />
             <div className="bg-pink w-full">
-                <p className="text-center text-white text-4xl py-4">Languages I <span className="line-through decoration-dark-white">speak</span> code</p>
+                <p className="text-center text-white text-4xl pt-4">Languages I <span className="line-through decoration-dark-white">speak</span> code</p>
+                <p className="text-center text-dark-white text-sm pb-4">psst.. click the icons</p>
                 <div className="py-6 sm:px-4 sm:py-4 md:px-14 lg:px-16 flex flex-wrap gap-y-10 overflow-hidden">
-                    {languages_info.map((info) => (
+                    {languages_info.map((info, index) => (
                         info.img2 === undefined ? 
-                        <div className="split-icon inline-flex h-auto">
+                        <div key={index} className="split-icon inline-flex h-auto">
                             <div className="split-left-div">
                                 <img className="z-10 split-left split-left-cut" src={info.img} />
                             </div>
@@ -131,7 +132,7 @@ export default function Langs() {
                             <div className="split-right-div">
                                 <img className="z-10 split-right split-right-cut" src={info.img} />
                             </div>
-                        </div> : <div className="split-icon inline-flex h-auto">
+                        </div> : <div key={index} className="split-icon inline-flex h-auto">
                             <div className="split-left-div">
                                 <img className="z-10 split-left" src={info.img} />
                             </div>

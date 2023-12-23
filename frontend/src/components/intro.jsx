@@ -117,7 +117,7 @@ export default function Intro() {
                         </a>
 					</div>
 					<Bubble className="absolute h-full p-6" />
-					<div className="z-10 flex flex-col gap-4">
+					<div className="z-10 flex flex-col gap-6">
 						<h1 className="text-3xl text-white inverted-text">
 							Hello, I'm{" "}
 							<span className="text-pink bg-white px-3 py-[0.75] rounded-full">

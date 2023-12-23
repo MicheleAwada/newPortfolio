@@ -29,7 +29,7 @@ export default function Projects() {
         <section className="bg-dark-white w-full pt-4">
             <h1 className="text-center text-dark-purple text-4xl"><span className="rotated-my">My</span> Projects</h1>
             <div id="proj-container" className="flex flex-wrap gap-8 p-8 items-center w-full py-12">
-                {projects_info.map((info) => (<div className="flip-card w-80 h-60 p-4 border-dark-purple border-2 rounded-md">
+                {projects_info.map((info, index) => (<div key={index} className="flip-card w-80 h-60 p-4 border-dark-purple border-2 rounded-md">
                     <div className="flip-card-inner">
                         <div className="flip-card-front flex flex-col rounded-md">
                             <div className="max-w-full">
