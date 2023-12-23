@@ -4,9 +4,33 @@
 @tailwind utilities;
 :root {
   font-family: "Montserrat";
-  font-size: 16px;
 }
 
+#root, body, html {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1024) {
+  :root {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1280) {
+  :root {
+    font-size: 16px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
