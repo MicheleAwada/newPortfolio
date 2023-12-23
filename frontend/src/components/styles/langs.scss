@@ -1,14 +1,35 @@
+$speed-time: 0.66s;
+
+$lang-size-small: 2.5rem;
+$lang-size-medium: 3.5rem;
+$lang-size-large: 4rem;
 
 .split-icon {
     &:hover {
         // gap: 4rem;
         .split-right {
             // transform: translate(100%, 0);
-            right: -1.5rem;
+            @media screen and (max-width:900px) {
+                right: -1.25rem;
+            }
+            @media screen and (min-width:901px) and (max-width:1300px) {
+                right: -1.2rem;
+            }
+            @media screen and (min-width:1301px) {
+                right: -1rem;
+            }
         }
         .split-left {
             // transform: translate(-100%, 0);
-            left: -1.5rem;
+            @media screen and (max-width:900px) {
+                left: -1.25rem;
+            }
+            @media screen and (min-width:901px) and (max-width:1300px) {
+                left: -1.2rem;
+            }
+            @media screen and (min-width:1301px) {
+                left: -1rem;
+            }
         }
         .split-inner {
             opacity: 1;
@@ -23,28 +44,48 @@
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
-        transition: opacity 0.6s;
+        transition: opacity $speed-time;
     }
     .split-right {
         display: block;
         position: relative;
-        width:4rem;
-        right: 2rem;
+        @media screen and (max-width:900px) {
+            width: $lang-size-small;
+            right: calc($lang-size-small / 2);
+        }
+        @media screen and (min-width:901px) and (max-width:1300px) {
+            width: $lang-size-medium;
+            right: calc($lang-size-medium / 2);
+        }
+        @media screen and (min-width:1301px) {
+            width: $lang-size-large;
+            right: calc($lang-size-large / 2);
+        }
         border: 0 solid transparent;
         outline: 0 solid transparent;
         background-color: transparent;
-        transition: right 0.6s;
+        transition: right $speed-time;
     
     }
     .split-left {
         display: block;
         position: relative;
-        width:4rem;
-        left: 2rem;
+        @media screen and (max-width:900px) {
+            width: $lang-size-small;
+            left: calc($lang-size-small / 2);
+        }
+        @media screen and (min-width:901px) and (max-width:1300px) {
+            width: $lang-size-medium;
+            left: calc($lang-size-medium / 2);
+        }
+        @media screen and (min-width:1301px) {
+            width: $lang-size-large;
+            left: calc($lang-size-large / 2);
+        }
         border: 0 solid transparent;
         outline: 0 solid transparent;
         background-color: transparent;
-        transition: left 0.6s;
+        transition: left $speed-time;
     }
     .split-right-cut {
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
@@ -54,11 +95,10 @@
     }
 }
 
-$lang-transition-aspect-ratio: 203/900;
 .lang-transition {
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
     height: 0;
-    padding-top: calc(percentage($lang-transition-aspect-ratio) - 1px);
+    padding-top: calc((203%/900) - 1px);
 }

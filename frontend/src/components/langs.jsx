@@ -126,7 +126,7 @@ export default function Langs() {
                             <div className="split-left-div">
                                 <img className="z-10 split-left split-left-cut" src={info.img} />
                             </div>
-                            <p className="split-inner text-3l font-bold text-white">
+                            <p className="split-inner font-bold text-white">
                                 {info.name}
                             </p>
                             <div className="split-right-div">
@@ -136,7 +136,7 @@ export default function Langs() {
                             <div className="split-left-div">
                                 <img className="z-10 split-left" src={info.img} />
                             </div>
-                            <p className="split-inner text-3l font-bold text-white">
+                            <p className="split-inner font-bold text-white">
                                 {info.name}
                             </p>
                             <div className="split-right-div">
