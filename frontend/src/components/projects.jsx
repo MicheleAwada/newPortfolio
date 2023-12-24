@@ -1,6 +1,6 @@
 import "./styles/projects.css"
 
-import friendlyFurThumbnail from "../assets/images/projects/friendly fur.png"
+import friendlyFurThumbnail from "../assets/projects/images/friendly fur.png"
 
 export default function Projects() {
     const projects_info = [

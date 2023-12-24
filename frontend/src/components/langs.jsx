@@ -1,22 +1,22 @@
 import "./styles/langs.css"
 
-import layered_wave from "../assets/images/langs/layered-waves.svg"
+import layered_wave from "../assets/langs/images/layered-waves.svg"
 
-import NginxLogo from "../assets/images/langs/nginx-icon.svg"
-import TraefikLogo from "../assets/images/langs/traefikio-icon.svg"
+import NginxLogo from "../assets/langs/images/nginx-icon.svg"
+import TraefikLogo from "../assets/langs/images/traefikio-icon.svg"
 
-import ReactLogo1 from "../assets/images/langs/react-icon-1.svg"
-import ReactLogo2 from "../assets/images/langs/react-icon-2.svg"
+import ReactLogo1 from "../assets/langs/images/react-icon-1.svg"
+import ReactLogo2 from "../assets/langs/images/react-icon-2.svg"
 
-import Tailwind1 from "../assets/images/langs/tailwind-1.svg"
-import Tailwind2 from "../assets/images/langs/tailwind-2.svg"
+import Tailwind1 from "../assets/langs/images/tailwind-1.svg"
+import Tailwind2 from "../assets/langs/images/tailwind-2.svg"
 
 
-import Django1 from "../assets/images/langs/django-1.svg"
-import Django2 from "../assets/images/langs/django-2.svg"
+import Django1 from "../assets/langs/images/django-1.svg"
+import Django2 from "../assets/langs/images/django-2.svg"
 
-import Python1 from "../assets/images/langs/python-1.svg"
-import Python2 from "../assets/images/langs/python-2.svg"
+import Python1 from "../assets/langs/images/python-1.svg"
+import Python2 from "../assets/langs/images/python-2.svg"
 import { useEffect } from "react"
 
 export default function Langs() {

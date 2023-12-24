@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/intro.css";
 
-import wave from "../assets/images/intro/wave.svg";
+import wave from "../assets/intro/images/wave.svg";
 
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
