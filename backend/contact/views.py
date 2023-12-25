@@ -8,5 +8,3 @@ from .models import Contact
 class ContactViewSet(mixins.CreateModelMixin, GenericViewSet):
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
