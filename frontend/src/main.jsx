@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import KentuckyGame from "./routes/kentucky.jsx";
 import "./index.css";
 
 import { Provider } from "react-redux";
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/">
 			<Route index element={<App />} action={contactAction} />
+			<Route path="kentucky/" element={<KentuckyGame />} />
 		</Route>
 	)
 );
