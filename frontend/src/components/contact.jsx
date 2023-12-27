@@ -1,3 +1,5 @@
+import "./styles/contact.scss";
+
 import wave from "../assets/contact/images/wave.svg";
 import email_icon from "../assets/contact/images/email icon.svg";
 import { Form } from "react-router-dom";

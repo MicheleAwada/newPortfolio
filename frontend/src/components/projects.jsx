@@ -1,10 +1,12 @@
-import "./styles/projects.css";
+import "./styles/projects.scss";
 
 import friendlyFurThumbnail from "../assets/projects/images/friendly fur.png";
 import kentuckyThumbnail from "../assets/projects/images/kentucky.png";
+import chessThumbnail from "../assets/projects/images/chess.png";
+import mugThumbnail from "../assets/projects/images/mug.png";
 import { Link } from "react-router-dom";
 
-export default function Projects() {
+export function OldProjects() {
 	const projects_info = [
 		{
 			title: "Mug",
@@ -15,7 +17,7 @@ export default function Projects() {
 					password & auth info seamlessly.
 				</p>
 			),
-			thumbnail: friendlyFurThumbnail,
+			thumbnail: mugThumbnail,
 			link: (
 				<a
 					href="http://mug.micheleawada.com"
@@ -54,7 +56,7 @@ export default function Projects() {
 		{
 			title: "Chess Game",
 			description: <p>Website Developer</p>,
-			thumbnail: friendlyFurThumbnail,
+			thumbnail: chessThumbnail,
 			link: (
 				<Link
 					to="kentucky/"
@@ -77,22 +79,20 @@ export default function Projects() {
 				{projects_info.map((info, index) => (
 					<div
 						key={index}
-						className="flip-card w-[22rem] h-[16rem] p-4 border-dark-purple border-2 rounded-md"
+						className="flip-card w-[22rem] h-[16rem] p-4 bg-transparent border-dark-purple border-2 rounded-md"
 					>
-						<div className="flip-card-inner">
-							<div className="flip-card-front flex flex-col rounded-md">
-								<div className="max-w-full">
-									<img
-										src={info.thumbnail}
-										alt={info.title + " Thumbnail"}
-										className="w-full object-cover"
-									/>
-								</div>
-								<div className="w-full h-full bg-purple flex items-center justify-center">
+						<div className="flip-card-inner rounded-md">
+							<div className="flip-card-front flex flex-col h-full rounded-md overflow-hidden">
+								<img
+									src={info.thumbnail}
+									alt={info.title + " Thumbnail"}
+									className="w-full aspect-video object-contain bg-dark-white"
+								/>
+								<div className="w-full flex-grow bg-purple flex items-center justify-center">
 									<p className="text-white text-2xl">{info.title}</p>
 								</div>
 							</div>
-							<div className="flip-card-back flex justify-center items-center">
+							<div className="flip-card-back flex justify-center items-center rounded-md ">
 								<div className="flex flex-col gap-2">
 									<h1 className="text-xl">{info.title}</h1>
 									{info.description}
@@ -105,4 +105,8 @@ export default function Projects() {
 			</div>
 		</section>
 	);
+}
+
+export default function Project() {
+	return <div className="projects-container"></div>;
 }
