@@ -127,6 +127,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+FRONTEND_DOMAIN = 'http://localhost:5173'
+
 CORS_ORIGIN_WHITELIST = (
-  'http://localhost:5173',
+    FRONTEND_DOMAIN,
 )
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
