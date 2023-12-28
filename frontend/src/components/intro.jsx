@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import wave from "../assets/intro/images/wave.svg";
 
+import { domain_name } from "../api";
+
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
 
@@ -126,7 +128,7 @@ export default function Intro() {
 						<a
 							className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium"
 							target="_blank"
-							href="https://youtube.com"
+							href={`${domain_name}/static/contact/Michele_Awada's_Resume.pdf`}
 						>
 							Resume
 						</a>
