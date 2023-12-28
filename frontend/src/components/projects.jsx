@@ -363,7 +363,7 @@ export default function Project() {
 					</>
 				),
 				description: (
-					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
 						A lightning fast fully spa application. With modern complex
 						features. Frontend built on react and backend built on django. With
 						modern quick restAPIs and one tap google authentications.
@@ -385,7 +385,7 @@ export default function Project() {
 			selected: {
 				title: "Kentucky Game",
 				description: (
-					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg lg:leading-8">
+					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg lg:leading-8">
 						You are suddenly transformed into a pixelated chicken! You must eat
 						all the worms, strawberries and bananas. However! Beware of the fox
 						and the hawk trying to eat you! Survive as long as possible,{" "}
@@ -404,7 +404,7 @@ export default function Project() {
 			selected: {
 				title: "Chess VS AI",
 				description: (
-					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
 						Did winning your friend in Chess give you a ego boost?
 						<br />
 						<br />
@@ -425,9 +425,17 @@ export default function Project() {
 		{
 			props: { className: "mini-projects friendlyfur-project bg-dark-purple" },
 			selected: {
-				title: "Friendly Fur",
+				title: (
+					<>
+						Friendly Fur
+						<span className="font-medium text-xs sm:text-sm">
+							{" "}
+							First self-coded project
+						</span>
+					</>
+				),
 				description: (
-					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-xs sm:text-sm md:text-md lg:text-lg">
 						Do you like all your dogs, But fear buying them allergic food on
 						accident?
 						<br />
@@ -454,7 +462,7 @@ export default function Project() {
 
 	return (
 		<div className="bg-dark-white w-full flex items-center justify-center">
-			<div className="projects-container my-20 w-[90vmin] flex items-center justify-center">
+			<div className="projects-container my-20 w-[100vmin] md:w-[95vmin] flex items-center justify-center">
 				<div className="square-projects-container">
 					{projects_mapping.map((info, index) => {
 						const isSelected = selectedProject === index;
@@ -471,7 +479,7 @@ export default function Project() {
 										: states[projectsType][index]),
 								}}
 								className={
-									projectClasses + " " + (isSelected ? "selected" : "")
+									projectClasses + " lg:p-2 " + (isSelected ? "selected" : "")
 								}
 								onClick={() => {
 									if (selectedProject === null) {
@@ -501,8 +509,8 @@ export default function Project() {
 												}}
 											/>
 											<div className="flex-grow">
-												<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-4">
-													{info.selected.title}
+												<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-2 md:pl-4 font-semibold">
+													{fullyOpened ? info.selected.title : ""}
 												</p>
 											</div>
 										</div>
