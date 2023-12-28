@@ -322,12 +322,13 @@ export default function Project() {
 	const [projectsType, setProjectsType] = useState(0);
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [prevSelectedProject, setPrevSelectedProject] = useState(null);
+	const [fullyOpened, setFullyOpened] = useState(false);
 	function choiceIndex(array) {
 		return Math.floor(Math.random() * array.length);
 	}
 	useEffect(() => {
 		const projectsInterval = setInterval(() => {
-			if (selectedProject === null) {
+			if (selectedProject === null || true) {
 				const newProjectTypeIndex = choiceIndex(states);
 				setProjectsType(newProjectTypeIndex);
 			}
@@ -356,6 +357,18 @@ export default function Project() {
 		{
 			props: { className: "mini-projects mug-project bg-[#A9D5E5]" },
 			selected: {
+				title: (
+					<>
+						Mug<span className="font-medium text-sm"> Recommened</span>
+					</>
+				),
+				description: (
+					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+						A lightning fast fully spa application. With modern complex
+						features. Frontend built on react and backend built on django. With
+						modern quick restAPIs and one tap google authentications.
+					</p>
+				),
 				button: (
 					<a
 						target="_blank"
@@ -370,8 +383,17 @@ export default function Project() {
 		{
 			props: { className: "mini-projects kentucky-project bg-pink" },
 			selected: {
+				title: "Kentucky Game",
+				description: (
+					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg lg:leading-8">
+						You are suddenly transformed into a pixelated chicken! You must eat
+						all the worms, strawberries and bananas. However! Beware of the fox
+						and the hawk trying to eat you! Survive as long as possible,{" "}
+						<span className="font-medium">you don't die ;D</span> .
+					</p>
+				),
 				button: (
-					<Link to="/kentucky/" className="boutton">
+					<Link target="_blank" to="/kentucky/" className="boutton">
 						Play Now
 					</Link>
 				),
@@ -380,20 +402,51 @@ export default function Project() {
 		{
 			props: { className: "mini-projects chess-project bg-purple" },
 			selected: {
+				title: "Chess VS AI",
+				description: (
+					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+						Did winning your friend in Chess give you a ego boost?
+						<br />
+						<br />
+						<span className="font-semibold">Long Lived your ego</span>
+					</p>
+				),
 				button: (
-					<Link target="_blank" to="/kentucky/" className="boutton">
+					<a
+						target="_blank"
+						href="https://chess.micheleawada.com"
+						className="boutton"
+					>
 						Play Now
-					</Link>
+					</a>
 				),
 			},
 		},
 		{
 			props: { className: "mini-projects friendlyfur-project bg-dark-purple" },
 			selected: {
+				title: "Friendly Fur",
+				description: (
+					<p className="description text-dark-white px-4 text-sm md:text-md lg:text-lg">
+						Do you like all your dogs, But fear buying them allergic food on
+						accident?
+						<br />
+						Friendly Furs Web E-Commerence is the anwser for you
+						<br />
+						Buy treats and snacks with{" "}
+						<span className="font-medium">automatic filtering</span> to warn you
+						about dangerous products that contain allergies for your all your
+						dogs
+					</p>
+				),
 				button: (
-					<Link target="_blank" to="/kentucky/" className="boutton">
-						Play Now
-					</Link>
+					<a
+						target="_blank"
+						href="https://www.youtube.com/watch?v=HlnDabvjUOk&t=4s"
+						className="boutton"
+					>
+						Watch Video
+					</a>
 				),
 			},
 		},
@@ -424,6 +477,9 @@ export default function Project() {
 									if (selectedProject === null) {
 										setSelectedProject(index);
 										setPrevSelectedProject(index);
+										setTimeout(() => {
+											setFullyOpened(true);
+										}, 1000);
 									}
 								}}
 							>
@@ -437,6 +493,7 @@ export default function Project() {
 												onClick={() => {
 													if (selectedProject !== null) {
 														setSelectedProject(null);
+														setFullyOpened(false);
 														setTimeout(() => {
 															setPrevSelectedProject(null);
 														}, 1000);
@@ -444,18 +501,13 @@ export default function Project() {
 												}}
 											/>
 											<div className="flex-grow">
-												<p className="text-dark-white text-4xl pl-4">Mug</p>
+												<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-4">
+													{info.selected.title}
+												</p>
 											</div>
 										</div>
 										<div className="flex-grow">
-											<ul className="list-disc pl-8 pr-8">
-												<li className="text-dark-white">
-													<p className="text-dark-white font-medium">
-														description of mug is a fast very nice fast react
-														and django rest framework or as some call it drf
-													</p>
-												</li>
-											</ul>
+											{fullyOpened ? info.selected.description : ""}
 										</div>
 										<div>
 											<div className="flex items-center justify-end">

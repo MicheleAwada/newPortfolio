@@ -26,11 +26,14 @@
 		border-radius: 0.375rem;
 		color: #eee;
 	}
+	.description {
+		color: #f3f8ff;
+	}
 }
 
 .friendlyfur-project {
 	.boutton {
-		background-color: darken(#49108b, 4%);
+		background-color: darken(#49108b, 5%);
 		&:hover {
 			background-color: darken(#49108b, 7%);
 		}
@@ -42,12 +45,12 @@
 
 .kentucky-project {
 	.boutton {
-		background-color: #cd63d4;
+		background-color: darken(#e26ee5, 6%);
 		&:hover {
-			background-color: #b952c0;
+			background-color: darken(#e26ee5, 9%);
 		}
 		&:active {
-			background-color: rgb(163, 65, 170);
+			background-color: darken(#e26ee5, 12%);
 		}
 	}
 }
