@@ -80,7 +80,7 @@ export default function Contact() {
 									<Label
 										className="text-white"
 										htmlFor="name"
-										value="Your Name"
+										value="Your Name*"
 									/>
 								</div>
 								<TextInput
