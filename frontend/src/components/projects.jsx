@@ -328,11 +328,9 @@ export default function Project() {
 	}
 	useEffect(() => {
 		const projectsInterval = setInterval(() => {
-			if (selectedProject === null || true) {
-				const newProjectTypeIndex = choiceIndex(states);
-				setProjectsType(newProjectTypeIndex);
-			}
-		}, 3500);
+			const newProjectTypeIndex = choiceIndex(states);
+			setProjectsType(newProjectTypeIndex);
+		}, 3000);
 		return () => {
 			clearInterval(projectsInterval);
 		};
