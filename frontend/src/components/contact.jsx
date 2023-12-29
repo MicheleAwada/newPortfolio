@@ -4,7 +4,7 @@ import wave from "../assets/contact/images/wave.svg";
 import email_icon from "../assets/contact/images/email icon.svg";
 import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { contact } from "../api";
 
@@ -22,12 +22,16 @@ function isMobile() {
 
 export default function Contact({ simpleAddMessage }) {
 	const actionData = useActionData();
-
+	const formRef = useRef();
+	function cancelForm() {
+		formRef.current.reset();
+	}
 	function raiseErrorMessage(actionData) {
 		if (actionData === undefined) {
 			return;
 		}
 		if (actionData.succeeded === true) {
+			cancelForm();
 			return simpleAddMessage("success", "Your message was sent", "Success!");
 		}
 		if (actionData.succeeded === false) {
@@ -91,7 +95,11 @@ export default function Contact({ simpleAddMessage }) {
 					<p className="pt-4 pb-12 text-center text-white text-3xl font-bold">
 						Lets get in Touch
 					</p>
-					<Form method="POST" className="w-full flex flex-col gap-3">
+					<Form
+						ref={formRef}
+						method="POST"
+						className="w-full flex flex-col gap-3"
+					>
 						<div className="flex w-full flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8">
 							<div className="flex-grow">
 								<div className="mb-1 block">
