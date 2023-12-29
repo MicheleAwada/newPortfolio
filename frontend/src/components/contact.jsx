@@ -96,11 +96,11 @@ export default function Contact() {
 									<Label
 										className="text-white"
 										htmlFor="email"
-										value="Your Email"
+										value="Your Email*"
 									/>
 								</div>
 								<TextInput
-									required={false}
+									required
 									id="email"
 									name="email"
 									type="email"
@@ -113,11 +113,11 @@ export default function Contact() {
 								<Label
 									className="text-white"
 									htmlFor="message-title"
-									value="Message Title"
+									value="Message's Title*"
 								/>
 							</div>
 							<TextInput
-								required={false}
+								required
 								id="message-title"
 								name="title"
 								type="text"
@@ -129,7 +129,7 @@ export default function Contact() {
 								<Label
 									className="text-white"
 									htmlFor="message-body"
-									value="Message"
+									value="Message's Body"
 								/>
 							</div>
 							<Textarea
