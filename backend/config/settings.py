@@ -135,10 +135,13 @@ CORS_ORIGIN_WHITELIST = (
     FRONTEND_DOMAIN,
 )
 
-DOMAIN = "https://backend.micheleawada.com"
+
+BASE_DOMAIN = "backend.micheleawada.com"
+
+DOMAIN = f"https://{BASE_DOMAIN}"
 
 ALLOWED_HOSTS = [
-    DOMAIN,
+    BASE_DOMAIN,
 ]
 
 STATIC_URL = '/static/'
