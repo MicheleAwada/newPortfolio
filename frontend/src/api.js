@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const domain_name = "http://127.0.0.1:8000";
+export const domain_name = "https://backend.micheleawada.com";
 
 axios.defaults.baseURL = domain_name;
 
