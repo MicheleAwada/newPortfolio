@@ -27,7 +27,6 @@ services:
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8080 --log-level debug
     volumes:
       - portfolio_static:/app/static
-      - portfolio_media:/app/media
     depends_on:
       - postgres
     networks:
@@ -51,7 +50,6 @@ services:
       - portfolio_frontend_static:/dist
       - chess_frontend_static:/chess/dist
       - portfolio_static:/static
-      - portfolio_media:/media
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portfolio.middlewares=no-www-http@file,to-https@file"
