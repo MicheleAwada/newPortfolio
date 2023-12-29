@@ -1,9 +1,5 @@
 import "./styles/projects.scss";
 
-import friendlyFurThumbnail from "../assets/projects/images/friendly fur.png";
-import kentuckyThumbnail from "../assets/projects/images/kentucky.png";
-import chessThumbnail from "../assets/projects/images/chess.png";
-import mugThumbnail from "../assets/projects/images/mug.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
