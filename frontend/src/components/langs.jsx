@@ -133,7 +133,7 @@ export default function Langs() {
 				<p className="text-center text-dark-white text-sm pb-4">
 					psst.. click the icons
 				</p>
-				<div className="py-6 sm:px-4 sm:py-4 md:px-14 lg:px-16 flex flex-wrap gap-y-10 overflow-hidden">
+				<div className="py-6 sm:px-4 sm:py-4 md:px-14 lg:px-16 flex flex-wrap justify-center gap-y-10 overflow-hidden">
 					{languages_info.map((info, index) =>
 						info.img2 === undefined ? (
 							<div key={index} className="split-icon inline-flex h-auto">
