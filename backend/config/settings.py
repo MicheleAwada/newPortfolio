@@ -84,10 +84,6 @@ DATABASES = {
         'HOST': 'postgres',
         'POST': 5143,
     },
-    'sqlite': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
 }
 
 
