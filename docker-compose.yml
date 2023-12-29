@@ -7,6 +7,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - portfolio_frontend_static:/frontend/dist
+  frontend_chess_static:
+    container_name: chess_frontend_static
+    build:
+      context: ./chess
+      dockerfile: Dockerfile
+    volumes:
+      - chess_frontend_static:/app/dist
   backend:
     container_name: portfolio_backend
     build:
@@ -42,14 +49,15 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - portfolio_frontend_static:/dist
+      - chess_frontend_static:/chess/dist
       - portfolio_static:/static
       - portfolio_media:/media
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portfolio.middlewares=no-www-http@file,to-https@file"
-      - "traefik.http.routers.portfolio.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`backend.micheleawada.com`)"
+      - "traefik.http.routers.portfolio.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`chess.micheleawada.com`) || Host(`www.chess.micheleawada.com`) || Host(`backend.micheleawada.com`)"
       - "traefik.http.routers.portfolio.entrypoints=web"
-      - "traefik.http.routers.portfolio-secure.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`backend.micheleawada.com`)"
+      - "traefik.http.routers.portfolio-secure.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`chess.micheleawada.com`) || Host(`www.chess.micheleawada.com`) || Host(`backend.micheleawada.com`)"
       - "traefik.http.routers.portfolio-secure.middlewares=no-www@file"
       - "traefik.http.routers.portfolio-secure.tls.certresolver=letsencrypt"
       - "traefik.http.routers.portfolio-secure.tls=true"
