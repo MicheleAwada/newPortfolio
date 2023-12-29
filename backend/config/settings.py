@@ -133,13 +133,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-FRONTEND_DOMAIN = 'http://localhost:5173'
+FRONTEND_DOMAIN = 'https://micheleawada.com'
 
 CORS_ORIGIN_WHITELIST = (
     FRONTEND_DOMAIN,
 )
 
-DOMAIN = "http://127.0.0.1:8000"
+DOMAIN = "https://backend.micheleawada.com"
 
 ALLOWED_HOSTS = [
     DOMAIN,
