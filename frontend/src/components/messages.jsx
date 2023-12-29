@@ -70,7 +70,7 @@ function simpleMakeMessage(
 			className="shadow-sm"
 			key={key}
 		>
-			<p className="pr-0 lg:pr-4">
+			<p className="pr-0 md:pr-2">
 				{boldMessage && (
 					<span className="font-medium">{boldMessage + " "}</span>
 				)}
