@@ -15,8 +15,8 @@ function addMessageToSetMessage(dict, value) {
 	return new_dict;
 }
 function simpleMakeMessage(
-	message,
 	type,
+	message,
 	boldMessage = "",
 	messages,
 	setMessages
@@ -86,6 +86,22 @@ export function get_all_messages(messages, setMessages) {
 	return { simpleAddMessage, addMessage };
 }
 
-export default function getSimpleAddMessages(message, setMessages) {
-	return get_all_messages(message, setMessages).simpleAddMessage;
+export function getSimpleAddMessages(messages, setMessages) {
+	return get_all_messages(messages, setMessages).simpleAddMessage;
+}
+
+export default function RenderMessages({
+	messages,
+	className = "gap-2 top-0 right-0 p-8",
+}) {
+	return (
+		<div
+			id="messages"
+			className={`fixed z-50 flex flex-col items-center ${className}`}
+		>
+			{Object.keys(messages)
+				.reverse()
+				.map((message) => messages[message])}
+		</div>
+	);
 }

@@ -20,7 +20,7 @@ function isMobile() {
 	);
 }
 
-export default function Contact() {
+export default function Contact({ simpleAddMessage }) {
 	useEffect(() => {
 		let elems = document.getElementsByClassName("jump-child-on-hover");
 		elems = Array.from(elems);
@@ -142,6 +142,19 @@ export default function Contact() {
 							/>
 						</div>
 						<Button color="dark" type="sumbit">
+							Sumbit
+						</Button>
+						<Button
+							color="dark"
+							type="button"
+							onClick={() => {
+								simpleAddMessage(
+									"success",
+									"Your message has been sent",
+									"Success!"
+								);
+							}}
+						>
 							Sumbit
 						</Button>
 					</Form>

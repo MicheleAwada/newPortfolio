@@ -3,14 +3,15 @@ import Projects from "./components/projects";
 import Langs from "./components/langs";
 import Contact from "./components/contact";
 
-import getSimpleAddMessages from "./components/messages";
+import RenderMessages, { getSimpleAddMessages } from "./components/messages";
 import { useState } from "react";
 
 function App() {
-	const [message, setMessage] = useState({});
-	const simpleAddMessage = getSimpleAddMessages(message, setMessage);
+	const [messages, setMessages] = useState({});
+	const simpleAddMessage = getSimpleAddMessages(messages, setMessages);
 	return (
 		<>
+			<RenderMessages messages={messages} />
 			<Intro />
 			<Projects />
 			<Langs />
