@@ -10,6 +10,13 @@ export async function contact(data) {
 		return { succeeded: true, data: response.data };
 	} catch (error) {
 		console.error(error);
-		return { succeeded: false, errors: response.response.data };
+		let errorValue;
+		if (error.hasOwnProperty("response")) {
+			errorValue = error.response.data;
+		} else if (error.hasOwnProperty("message")) {
+			errorValue = error.message;
+		} else errorValue = "error";
+
+		return { succeeded: false, errors: errorValue };
 	}
 }

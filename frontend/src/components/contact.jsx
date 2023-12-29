@@ -2,7 +2,7 @@ import "./styles/contact.scss";
 
 import wave from "../assets/contact/images/wave.svg";
 import email_icon from "../assets/contact/images/email icon.svg";
-import { Form } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
 import { useEffect } from "react";
 
@@ -21,6 +21,24 @@ function isMobile() {
 }
 
 export default function Contact({ simpleAddMessage }) {
+	const actionData = useActionData();
+
+	function raiseErrorMessage(actionData) {
+		if (actionData === undefined) {
+			return;
+		}
+		if (actionData.succeeded === true) {
+			return simpleAddMessage("success", "Your message was sent", "Success!");
+		}
+		if (actionData.succeeded === false) {
+			return simpleAddMessage("error", actionData.errors, "Whops!");
+		}
+	}
+
+	useEffect(() => {
+		raiseErrorMessage(actionData);
+	}, [actionData]);
+
 	useEffect(() => {
 		let elems = document.getElementsByClassName("jump-child-on-hover");
 		elems = Array.from(elems);
@@ -142,19 +160,6 @@ export default function Contact({ simpleAddMessage }) {
 							/>
 						</div>
 						<Button color="dark" type="sumbit">
-							Sumbit
-						</Button>
-						<Button
-							color="dark"
-							type="button"
-							onClick={() => {
-								simpleAddMessage(
-									"success",
-									"Your message has been sent",
-									"Success!"
-								);
-							}}
-						>
 							Sumbit
 						</Button>
 					</Form>
