@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 import wave from "../assets/intro/images/wave.svg";
 
-import { domain_name } from "../api";
-
 import KUTE from "kute.js";
 
 function ButtonBubble(props) {
@@ -130,7 +128,7 @@ export default function Intro() {
 						<a
 							className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium"
 							target="_blank"
-							href={`${domain_name}/static/contact/Michele_Awada's_Resume.pdf`}
+							href={`/Michele_Awada's_Resume.pdf`}
 						>
 							Resume
 						</a>
