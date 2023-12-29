@@ -33,7 +33,6 @@ function simpleMakeMessage(
 	if (type === "error") {
 		color = "failure";
 		icon = HiOutlineExclamationCircle;
-		boldMessage = "Error, " + boldMessage;
 	} else if (type === "success") {
 		color = "success";
 		icon = HiOutlineCheckCircle;
