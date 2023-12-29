@@ -1,13 +1,11 @@
 .inverted-text {
-    mix-blend-mode: difference;
-    
+	mix-blend-mode: difference;
 }
 
-$intro-transition-aspect-ratio: 82.3/900;
 .intro-transition {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 0;
-    padding-bottom: percentage($intro-transition-aspect-ratio);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 0;
+	padding-bottom: calc(82.3 / 900);
 }
