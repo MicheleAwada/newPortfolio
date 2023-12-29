@@ -1,4 +1,5 @@
-FROM node:alpine
+# FROM node:alpine
+FROM scratch
 
 WORKDIR /frontend
 
@@ -8,4 +9,4 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+# RUN npm run build
