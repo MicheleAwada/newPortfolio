@@ -14,6 +14,7 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./backend/config/.env
+      - ./backend/config/.db.env
     expose:
       - 8080
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8080 --log-level debug
@@ -30,10 +31,7 @@ services:
     volumes:
       - portfolio_postgres_data:/var/lib/postgresql/data
     env_file:
-      - ./backend/config/db.env
-    environment:
-      POSTGRES_DB: Portfolio
-      POSTGRES_USER: postgres
+      - ./backend/config/.db.env
     networks:
       - internal
   nginx:
