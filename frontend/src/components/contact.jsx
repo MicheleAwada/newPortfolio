@@ -156,7 +156,7 @@ export default function Contact() {
 							href="https://github.com/MicheleAwada/"
 							className="jump-child-on-hover w-14 aspect-square relative"
 						>
-							<div className="absolute bottom-0 left-0">
+							<div className="absolute bottom-0 left-0 w-full">
 								<img
 									className="w-full aspect-square"
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
@@ -167,7 +167,7 @@ export default function Contact() {
 							href="https://www.linkedin.com/in/michele-awada/"
 							className="jump-child-on-hover w-14 aspect-square relative"
 						>
-							<div className="absolute bottom-0 left-0">
+							<div className="absolute bottom-0 left-0 w-full">
 								<img
 									className="w-full aspect-square"
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
@@ -178,7 +178,7 @@ export default function Contact() {
 							href="mailto:info@micheleawada.com"
 							className="jump-child-on-hover w-14 aspect-square relative"
 						>
-							<div className="absolute bottom-0 left-0">
+							<div className="absolute bottom-0 left-0 w-full">
 								<img
 									className="w-full aspect-square p-2 bg-gray-900 rounded-md"
 									src={email_icon}
