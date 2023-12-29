@@ -2,3 +2,5 @@ node_modules
 .idea
 venv
 backend/db.sqlite3
+node_modules
+**/__pycache__/
