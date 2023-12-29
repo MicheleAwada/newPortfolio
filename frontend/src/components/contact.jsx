@@ -86,7 +86,7 @@ export default function Contact({ simpleAddMessage }) {
 	return (
 		<>
 			<img src={wave} alt="wave transition" className="w-full bg-dark-white" />
-			<div className="bg-purple px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:gap-12">
+			<div className="bg-purple px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
 				<div className="w-full">
 					<p className="pt-4 pb-12 text-center text-white text-3xl font-bold">
 						Lets get in Touch
@@ -98,7 +98,7 @@ export default function Contact({ simpleAddMessage }) {
 									<Label
 										className="text-white"
 										htmlFor="name"
-										value="Your Name*"
+										value="Your Name *"
 									/>
 								</div>
 								<TextInput
@@ -114,7 +114,7 @@ export default function Contact({ simpleAddMessage }) {
 									<Label
 										className="text-white"
 										htmlFor="email"
-										value="Your Email*"
+										value="Your Email *"
 									/>
 								</div>
 								<TextInput
@@ -131,7 +131,7 @@ export default function Contact({ simpleAddMessage }) {
 								<Label
 									className="text-white"
 									htmlFor="message-title"
-									value="Message's Title*"
+									value="Message's Title *"
 								/>
 							</div>
 							<TextInput
@@ -164,7 +164,7 @@ export default function Contact({ simpleAddMessage }) {
 						</Button>
 					</Form>
 				</div>
-				<p className="text-white text-2xl text-center">Or</p>
+				<p className="text-white text-2xl text-center xl:pt-8">Or</p>
 				<div>
 					<p className="pt-4 pb-4 text-center text-white text-3xl font-bold">
 						Contact through my socials
