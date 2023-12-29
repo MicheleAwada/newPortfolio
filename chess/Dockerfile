@@ -2,4 +2,4 @@ FROM scratch
 
 WORKDIR /app
 
-COPY ./chess/dist .
+COPY ./dist .
