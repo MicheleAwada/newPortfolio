@@ -124,7 +124,7 @@ export default function Intro() {
 		<>
 			<section className="bg-dark-purple w-full h-[38rem] relative">
 				<div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
-					<div className="absolute top-0 right-0 py-8 px-12 z-10">
+					<div className="absolute top-0 right-0 py-6 px-6 lg:py-8 lg:px-12 z-10">
 						<a
 							className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium"
 							target="_blank"
