@@ -1,5 +1,12 @@
 import { Alert } from "flowbite-react";
 
+import {
+	HiOutlineCheckCircle,
+	HiOutlineExclamationCircle,
+	HiInformationCircle,
+	HiOutlineExclamation,
+} from "react-icons/hi";
+
 function getLastKey(dict) {
 	if (!dict) {
 		return -1;
@@ -63,8 +70,12 @@ function simpleMakeMessage(
 			className="shadow-sm"
 			key={key}
 		>
-			{boldMessage && <span className="font-medium">{boldMessage + " "}</span>}
-			{message}
+			<p className="pr-0 lg:pr-4">
+				{boldMessage && (
+					<span className="font-medium">{boldMessage + " "}</span>
+				)}
+				{message}
+			</p>
 		</Alert>
 	);
 }
