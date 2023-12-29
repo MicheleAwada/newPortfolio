@@ -23,9 +23,9 @@ export default function start_game(canvas_name) {
 		canvas: document.getElementById(canvas_name),
 	});
 
-	k.loadFont("pixelated_font", "/src/assets/kaboom/fonts/VT323.ttf");
+	k.loadFont("pixelated_font", "/kaboom/fonts/VT323.ttf");
 
-	k.loadRoot("/src/assets/kaboom/images/");
+	k.loadRoot("/kaboom/images/");
 
 	//bg
 	const day_night_cycle_speed = 0.1;
