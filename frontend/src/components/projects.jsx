@@ -496,20 +496,22 @@ export default function Project() {
 								{isSelected && (
 									<div className="w-full h-full flex flex-col">
 										<div className="flex items-center">
-											<IoMdArrowBack
-												color="white"
-												size={"3rem"}
-												className="m-2 cursor-pointer"
-												onClick={() => {
-													if (selectedProject !== null) {
-														setSelectedProject(null);
-														setFullyOpened(false);
-														setTimeout(() => {
-															setPrevSelectedProject(null);
-														}, 1000);
-													}
-												}}
-											/>
+											{fullyOpened && (
+												<IoMdArrowBack
+													color="white"
+													size={"3rem"}
+													className="m-2 cursor-pointer"
+													onClick={() => {
+														if (selectedProject !== null) {
+															setSelectedProject(null);
+															setFullyOpened(false);
+															setTimeout(() => {
+																setPrevSelectedProject(null);
+															}, 1000);
+														}
+													}}
+												/>
+											)}
 											<div className="flex-grow">
 												<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-2 md:pl-4 font-semibold">
 													{fullyOpened ? info.selected.title : ""}
@@ -521,7 +523,7 @@ export default function Project() {
 										</div>
 										<div>
 											<div className="flex items-center justify-end">
-												{info.selected.button}
+												{fullyOpened && info.selected.button}
 											</div>
 										</div>
 									</div>
