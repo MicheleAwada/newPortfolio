@@ -377,7 +377,11 @@ export default function Project() {
 		{
 			props: { className: "mini-projects kentucky-project bg-pink" },
 			selected: {
-				title: "Kentucky Game",
+				title: (
+					<>
+						Kentucky Game<span className="font-medium text-sm"> Fun</span>
+					</>
+				),
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg lg:leading-8">
 						You are suddenly transformed into a pixelated chicken! You must eat
@@ -396,7 +400,11 @@ export default function Project() {
 		{
 			props: { className: "mini-projects chess-project bg-purple" },
 			selected: {
-				title: "Chess VS AI",
+				title: (
+					<>
+						Chess VS AI<span className="font-medium text-sm"> Fun</span>
+					</>
+				),
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
 						Did winning your friend in Chess give you a ego boost?
