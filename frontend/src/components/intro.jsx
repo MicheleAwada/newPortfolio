@@ -6,6 +6,8 @@ import wave from "../assets/intro/images/wave.svg";
 
 import { domain_name } from "../api";
 
+import KUTE from "kute.js";
+
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
 

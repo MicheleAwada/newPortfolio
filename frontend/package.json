@@ -19,6 +19,7 @@
     "drei": "^1.0.0",
     "flowbite-react": "^0.7.2",
     "kaboom": "^3000.1.17",
+    "kute.js": "^2.2.4",
     "postscribe": "^2.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
