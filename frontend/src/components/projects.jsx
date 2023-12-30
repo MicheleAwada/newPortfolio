@@ -335,7 +335,7 @@ export default function Project() {
 		return () => {
 			clearInterval(projectsInterval);
 		};
-	});
+	}, []);
 
 	const selectedProjectStyles = {
 		top: 0,
