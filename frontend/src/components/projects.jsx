@@ -163,6 +163,17 @@ export default function Project() {
 		},
 	];
 
+	function clearTimeoutArray(array) {
+		array.forEach((timeout) => {
+			clearTimeout(timeout);
+		});
+		array.splice(0, array.length);
+		return array;
+	}
+
+	let [prevTimeouts, setPrevTimeouts] = useState([]);
+	let [openedTimeouts, setOpenedTimeouts] = useState([]);
+
 	return (
 		<div className="bg-dark-white w-full flex items-center justify-center">
 			<div className="flex-col items-center my-20">
@@ -195,12 +206,18 @@ export default function Project() {
 									}
 									onClick={() => {
 										if (selectedProject !== index) {
-											console.log("cube");
 											setSelectedProject(index);
+											setPrevTimeouts((prevTimeouts) =>
+												clearTimeoutArray(prevTimeouts)
+											);
 											setPrevSelectedProject(index);
-											setTimeout(() => {
+											const currentOpenedTimeout = setTimeout(() => {
 												setFullyOpened(true);
 											}, 1000);
+											setOpenedTimeouts((openedTimeout) => [
+												...openedTimeout,
+												currentOpenedTimeout,
+											]);
 										}
 									}}
 								>
@@ -213,14 +230,25 @@ export default function Project() {
 														size={"3rem"}
 														className="m-2 cursor-pointer"
 														onClick={() => {
-															if (true) {
-																console.log("arrow");
-																setSelectedProject(null);
-																setFullyOpened(false);
-																setTimeout(() => {
-																	setPrevSelectedProject(null);
-																}, 1000);
-															}
+															setSelectedProject(null);
+															setFullyOpened(false);
+															setOpenedTimeouts((openedTimeouts) =>
+																clearTimeoutArray(openedTimeouts)
+															);
+															const currentTimeout = setTimeout(() => {
+																setPrevSelectedProject(null);
+																console.log("prev null");
+															}, 1000);
+															// console.log("here we started");
+															// console.log(prevTimeouts);
+															// if (prevTimeouts.length > 0) {
+															// 	prevTimeouts = clearTimeoutArray(prevTimeouts);
+															// }
+															setPrevTimeouts((prevTimeouts) => [
+																...prevTimeouts,
+																currentTimeout,
+															]);
+															// console.log(prevTimeouts);
 														}}
 													/>
 												)}
