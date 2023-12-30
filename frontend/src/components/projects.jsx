@@ -324,8 +324,13 @@ export default function Project() {
 	}
 	useEffect(() => {
 		const projectsInterval = setInterval(() => {
-			const newProjectTypeIndex = choiceIndex(states);
-			setProjectsType(newProjectTypeIndex);
+			setProjectsType((oldProjectTypeIndex) => {
+				const statesWithoutOldState = [...states];
+				console.log(statesWithoutOldState.length);
+				statesWithoutOldState.splice(oldProjectTypeIndex, 1);
+				const newProjectTypeIndex = choiceIndex(statesWithoutOldState);
+				return newProjectTypeIndex;
+			});
 		}, 3000);
 		return () => {
 			clearInterval(projectsInterval);
@@ -464,73 +469,82 @@ export default function Project() {
 
 	return (
 		<div className="bg-dark-white w-full flex items-center justify-center">
-			<div className="projects-container my-20 w-[100vmin] md:w-[95vmin] flex items-center justify-center">
-				<div className="square-projects-container">
-					{projects_mapping.map((info, index) => {
-						const isSelected = selectedProject === index;
-						const isPrevSelected = prevSelectedProject === index;
-						const projectClasses = info.props.className;
-						return (
-							<div
-								key={index}
-								style={{
-									...constantStateStyles[index],
-									...(isPrevSelected ? { zIndex: 5 } : {}),
-									...(isSelected
-										? selectedProjectStyles
-										: states[projectsType][index]),
-								}}
-								className={
-									projectClasses + " lg:p-2 " + (isSelected ? "selected" : "")
-								}
-								onClick={() => {
-									if (selectedProject === null) {
-										setSelectedProject(index);
-										setPrevSelectedProject(index);
-										setTimeout(() => {
-											setFullyOpened(true);
-										}, 1000);
+			<div className="flex-col items-center my-20">
+				<div>
+					<p className="text-center text-4xl mb-16 text-dark-purple font-medium">
+						My Projects
+					</p>
+				</div>
+				<div className="projects-container w-[100vmin] md:w-[95vmin] flex items-center justify-center">
+					<div className="square-projects-container">
+						{projects_mapping.map((info, index) => {
+							const isSelected = selectedProject === index;
+							const isPrevSelected = prevSelectedProject === index;
+							const projectClasses = info.props.className;
+							return (
+								<div
+									key={index}
+									style={{
+										...constantStateStyles[index],
+										...(isPrevSelected ? { zIndex: 5 } : {}),
+										...(isSelected
+											? selectedProjectStyles
+											: states[projectsType][index]),
+									}}
+									className={
+										projectClasses + " lg:p-2 " + (isSelected ? "selected" : "")
 									}
-								}}
-							>
-								{isSelected && (
-									<div className="w-full h-full flex flex-col">
-										<div className="flex items-center">
-											{fullyOpened && (
-												<IoMdArrowBack
-													color="white"
-													size={"3rem"}
-													className="m-2 cursor-pointer"
-													onClick={() => {
-														if (selectedProject !== null) {
-															setSelectedProject(null);
-															setFullyOpened(false);
-															setTimeout(() => {
-																setPrevSelectedProject(null);
-															}, 1000);
-														}
-													}}
-												/>
-											)}
+									onClick={() => {
+										if (selectedProject !== index) {
+											console.log("cube");
+											setSelectedProject(index);
+											setPrevSelectedProject(index);
+											setTimeout(() => {
+												setFullyOpened(true);
+											}, 1000);
+										}
+									}}
+								>
+									{isSelected && (
+										<div className="w-full h-full flex flex-col">
+											<div className="flex items-center">
+												{fullyOpened && (
+													<IoMdArrowBack
+														color="white"
+														size={"3rem"}
+														className="m-2 cursor-pointer"
+														onClick={() => {
+															if (true) {
+																console.log("arrow");
+																setSelectedProject(null);
+																setFullyOpened(false);
+																setTimeout(() => {
+																	setPrevSelectedProject(null);
+																}, 1000);
+															}
+														}}
+													/>
+												)}
+												<div className="flex-grow">
+													<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-2 md:pl-4 font-semibold">
+														{fullyOpened ? info.selected.title : ""}
+													</p>
+												</div>
+											</div>
 											<div className="flex-grow">
-												<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-2 md:pl-4 font-semibold">
-													{fullyOpened ? info.selected.title : ""}
-												</p>
+												{fullyOpened ? info.selected.description : ""}
+											</div>
+											<div>
+												<div className="flex items-center justify-end">
+													{fullyOpened && info.selected.button}
+												</div>
 											</div>
 										</div>
-										<div className="flex-grow">
-											{fullyOpened ? info.selected.description : ""}
-										</div>
-										<div>
-											<div className="flex items-center justify-end">
-												{fullyOpened && info.selected.button}
-											</div>
-										</div>
-									</div>
-								)}
-							</div>
-						);
-					})}
+									)}
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</div>
