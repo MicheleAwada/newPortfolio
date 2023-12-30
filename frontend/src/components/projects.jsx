@@ -171,8 +171,8 @@ export default function Project() {
 		return array;
 	}
 
-	let [prevTimeouts, setPrevTimeouts] = useState([]);
-	let [openedTimeouts, setOpenedTimeouts] = useState([]);
+	const [_prevTimeouts, setPrevTimeouts] = useState([]);
+	const [_openedTimeouts, setOpenedTimeouts] = useState([]);
 
 	return (
 		<div className="bg-dark-white w-full flex items-center justify-center">
@@ -239,16 +239,10 @@ export default function Project() {
 																setPrevSelectedProject(null);
 																console.log("prev null");
 															}, 1000);
-															// console.log("here we started");
-															// console.log(prevTimeouts);
-															// if (prevTimeouts.length > 0) {
-															// 	prevTimeouts = clearTimeoutArray(prevTimeouts);
-															// }
 															setPrevTimeouts((prevTimeouts) => [
 																...prevTimeouts,
 																currentTimeout,
 															]);
-															// console.log(prevTimeouts);
 														}}
 													/>
 												)}
