@@ -6,8 +6,6 @@ import wave from "../assets/intro/images/wave.svg";
 
 import KUTE from "kute.js";
 
-import ResumeURL from "../assets/intro/Michele Awada's Resume.pdf?url";
-
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
 
@@ -130,7 +128,7 @@ export default function Intro() {
 						<a
 							className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium"
 							target="_blank"
-							href={ResumeURL}
+							href="/resume.pdf"
 						>
 							Resume
 						</a>
