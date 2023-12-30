@@ -137,13 +137,13 @@ export default function Intro() {
 					</div>
 					<Bubble className="absolute h-full p-6" />
 					<div className="z-10 flex flex-col gap-6">
-						<h1 className="text-3xl text-white inverted-text">
+						<h1 className="text-2xl md:text-3xl text-white inverted-text">
 							Hello, I'm{" "}
 							<span className="text-pink bg-white px-3 py-[0.75] rounded-full">
 								Michele
 							</span>
 						</h1>
-						<h1 className="text-3xl text-white inverted-text">
+						<h1 className="text-2xl md:text-3xl text-white inverted-text">
 							a{" "}
 							<span className="bg-amber-400 rounded-full px-3 py-[0.75]">
 								Full Stack

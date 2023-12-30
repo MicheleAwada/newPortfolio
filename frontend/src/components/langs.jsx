@@ -126,10 +126,10 @@ export default function Langs() {
 				className="w-full bg-dark-white"
 			/>
 			<div className="bg-pink w-full">
-				<p className="text-center text-white text-4xl pt-4">
+				<h1 className="text-center text-white text-2xl md:text-3xl pt-4">
 					Languages I{" "}
 					<span className="line-through decoration-dark-white">speak</span> code
-				</p>
+				</h1>
 				<p className="text-center text-dark-white text-sm pb-4">
 					psst.. click the icons
 				</p>

@@ -92,9 +92,9 @@ export default function Contact({ simpleAddMessage }) {
 			<img src={wave} alt="wave transition" className="w-full bg-dark-white" />
 			<div className="bg-purple px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
 				<div className="w-full">
-					<p className="pt-4 pb-12 text-center text-white text-3xl font-bold">
+					<h1 className="pt-4 pb-12 text-center text-white text-2xl md:text-3xl font-bold">
 						Lets get in Touch
-					</p>
+					</h1>
 					<Form
 						ref={formRef}
 						method="POST"
@@ -174,9 +174,9 @@ export default function Contact({ simpleAddMessage }) {
 				</div>
 				<p className="text-white text-2xl text-center xl:pt-8">Or</p>
 				<div>
-					<p className="pt-4 pb-4 text-center text-white text-3xl font-bold">
+					<h1 className="pt-4 pb-4 text-center text-white text-2xl md:text-3xl font-semibold">
 						Contact through my socials
-					</p>
+					</h1>
 					<div className="flex justify-center gap-12 pt-12 pb-8">
 						<a
 							href="https://github.com/MicheleAwada/"

@@ -178,9 +178,9 @@ export default function Project() {
 		<div className="bg-dark-white w-full flex items-center justify-center">
 			<div className="flex-col items-center my-20">
 				<div className="mb-16 flex flex-col gap-2">
-					<p className="text-center text-4xl text-dark-purple font-medium">
+					<h1 className="text-center text-2xl md:text-3xl text-dark-purple font-medium">
 						My Projects
-					</p>
+					</h1>
 					<p className="text-center text-sm text-dark-purple font-light">
 						Click a colour!
 					</p>
@@ -227,8 +227,7 @@ export default function Project() {
 												{fullyOpened && (
 													<IoMdArrowBack
 														color="white"
-														size={"3rem"}
-														className="m-2 cursor-pointer"
+														className="cursor-pointer aspect-square h-8 sm:h-12 w-8 sm:w-12 m-2"
 														onClick={() => {
 															setSelectedProject(null);
 															setFullyOpened(false);
@@ -237,7 +236,6 @@ export default function Project() {
 															);
 															const currentTimeout = setTimeout(() => {
 																setPrevSelectedProject(null);
-																console.log("prev null");
 															}, 1000);
 															setPrevTimeouts((prevTimeouts) => [
 																...prevTimeouts,
@@ -247,9 +245,9 @@ export default function Project() {
 													/>
 												)}
 												<div className="flex-grow">
-													<p className="text-dark-white text-2xl md:text-3xl lg:text-4xl pl-2 md:pl-4 font-semibold">
+													<h1 className="text-dark-white text-2xl sm:text-3xl pl-2 md:pl-4 font-semibold">
 														{fullyOpened ? info.selected.title : ""}
-													</p>
+													</h1>
 												</div>
 											</div>
 											<div className="flex-grow">
