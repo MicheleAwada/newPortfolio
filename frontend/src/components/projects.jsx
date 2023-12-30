@@ -326,9 +326,12 @@ export default function Project() {
 		const projectsInterval = setInterval(() => {
 			setProjectsType((oldProjectTypeIndex) => {
 				const statesWithoutOldState = [...states];
-				console.log(statesWithoutOldState.length);
 				statesWithoutOldState.splice(oldProjectTypeIndex, 1);
-				const newProjectTypeIndex = choiceIndex(statesWithoutOldState);
+
+				let newProjectTypeIndex = choiceIndex(statesWithoutOldState);
+
+				if (newProjectTypeIndex >= oldProjectTypeIndex) newProjectTypeIndex++;
+
 				return newProjectTypeIndex;
 			});
 		}, 3000);
