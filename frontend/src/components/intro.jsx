@@ -6,7 +6,7 @@ import wave from "../assets/intro/images/wave.svg";
 
 import KUTE from "kute.js";
 
-import resume from "/resume.pdf";
+import resume from "/resume.pdf?url";
 
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
