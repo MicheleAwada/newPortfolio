@@ -473,9 +473,12 @@ export default function Project() {
 	return (
 		<div className="bg-dark-white w-full flex items-center justify-center">
 			<div className="flex-col items-center my-20">
-				<div>
-					<p className="text-center text-4xl mb-16 text-dark-purple font-medium">
+				<div className="mb-16 flex flex-col gap-2">
+					<p className="text-center text-4xl text-dark-purple font-medium">
 						My Projects
+					</p>
+					<p className="text-center text-sm text-dark-purple font-light">
+						Click a colour!
 					</p>
 				</div>
 				<div className="projects-container w-[100vmin] md:w-[95vmin] flex items-center justify-center">
