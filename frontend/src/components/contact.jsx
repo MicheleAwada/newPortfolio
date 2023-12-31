@@ -174,7 +174,7 @@ export default function Contact({ simpleAddMessage }) {
 								placeholder="Hello..."
 							/>
 						</div>
-						<Button color="dark" type="sumbit">
+						<Button color="dark" type="sumbit" disabled={showSpinner}>
 							{showSpinner && (
 								<img
 									src={spinner_icon}
