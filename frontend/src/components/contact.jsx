@@ -1,6 +1,6 @@
 import "./styles/contact.scss";
 
-import wave from "../assets/contact/images/wave.svg";
+import Wave from "../assets/contact/images/wave.svg?react";
 import email_icon from "../assets/contact/images/email icon.svg";
 import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
@@ -88,9 +88,9 @@ export default function Contact({ simpleAddMessage }) {
 		});
 	}, []);
 	return (
-		<>
-			<img src={wave} alt="wave transition" className="w-full bg-dark-white" />
-			<div className="bg-purple px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
+		<div className="flex flex-col items-center overflow-hidden w-full">
+			<Wave className="w-full bg-pink" />
+			<div className="bg-purple w-full px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
 				<div className="w-full">
 					<h1 className="pt-4 pb-12 text-center text-white text-2xl md:text-3xl font-bold">
 						Lets get in Touch
@@ -215,6 +215,6 @@ export default function Contact({ simpleAddMessage }) {
 					<p className="text-center text-white">Email: info@micheleawada.com</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

@@ -1,6 +1,7 @@
 import "./styles/langs.scss";
 
-import layered_wave from "../assets/langs/images/layered-waves.svg";
+import LayeredWaveUp from "../assets/langs/images/layered-waves-top.svg?react";
+import LayeredWaveBottom from "../assets/langs/images/layered-waves-bottom.svg?react";
 
 import NginxLogo from "../assets/langs/images/nginx-icon.svg";
 import TraefikLogo from "../assets/langs/images/traefikio-icon.svg";
@@ -16,7 +17,6 @@ import Django2 from "../assets/langs/images/django-2.svg";
 
 import Python1 from "../assets/langs/images/python-1.svg";
 import Python2 from "../assets/langs/images/python-2.svg";
-import { useEffect } from "react";
 
 export default function Langs() {
 	const languages_info = [
@@ -96,36 +96,12 @@ export default function Langs() {
 		},
 	];
 
-	// useEffect(() => {
-	//     const loadImage = (imageSrc) => {
-	//       const img = new Image();
-	//       img.src = imageSrc;
-
-	//       img.onload = function() {
-	//         const aspectRatio = img.width / img.height;
-	//         const containerRef = Document.getElementById("langs_transition_layered_waved");
-	//         if (containerRef.current) {
-	//           containerRef.current.style.height = `${
-	//             containerRef.current.offsetWidth / aspectRatio
-	//           }px`;
-	//         }
-	//       };
-	//     };
-
-	//     loadImage(Python1); // Replace with your imported image variable
-	//     // or loadImage(Python2); depending on which image you want to use
-
-	//   }, []);
-
 	return (
-		<>
-			{/* <div style={{ backgroundImage: `url(${layered_wave})` }} alt="layered_wave" className="lang-transition w-full bg-dark-white" /> */}
-			<img
-				src={layered_wave}
-				alt="layered_wave"
-				className="w-full bg-dark-white"
-			/>
-			<div className="bg-pink w-full">
+		<div className="flex flex-col items-center overflow-hidden w-full">
+			<div className="wave-aspect-ratio w-full">
+				<LayeredWaveUp className="w-full h-full bg-dark-white" />
+			</div>
+			<div className="bg-pink w-full pb-16">
 				<h1 className="text-center text-white text-2xl md:text-3xl pt-4">
 					Languages I{" "}
 					<span className="line-through decoration-dark-white">speak</span> code
@@ -139,37 +115,43 @@ export default function Langs() {
 							<div key={index} className="split-icon inline-flex h-auto">
 								<div className="split-left-div">
 									<img
-										className="z-10 split-left split-left-cut"
+										className="z-10 split-left split-left-cut select-none"
 										src={info.img}
+										draggable={false}
 									/>
 								</div>
 								<p className="split-inner font-bold text-white">{info.name}</p>
 								<div className="split-right-div">
 									<img
-										className="z-10 split-right split-right-cut"
+										className="z-10 split-right split-right-cut select-none"
 										src={info.img}
+										draggable={false}
 									/>
 								</div>
 							</div>
 						) : (
 							<div key={index} className="split-icon inline-flex h-auto">
 								<div className="split-left-div">
-									<img className="z-10 split-left" src={info.img} />
+									<img
+										className="z-10 split-left"
+										src={info.img}
+										draggable={false}
+									/>
 								</div>
 								<p className="split-inner font-bold text-white">{info.name}</p>
 								<div className="split-right-div">
-									<img className="z-10 split-right" src={info.img2} />
+									<img
+										className="z-10 split-right"
+										src={info.img2}
+										draggable={false}
+									/>
 								</div>
 							</div>
 						)
 					)}
 				</div>
 			</div>
-			<img
-				src={layered_wave}
-				alt="layered_wave"
-				className="rotate-180 w-full bg-dark-white"
-			/>
-		</>
+			{/* <LayeredWaveBottom className="w-screen bg-dark-white" /> */}
+		</div>
 	);
 }

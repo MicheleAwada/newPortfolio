@@ -2,7 +2,7 @@ import "./styles/intro.scss";
 
 import { useEffect, useState } from "react";
 
-import wave from "../assets/intro/images/wave.svg";
+import Wave from "../assets/intro/images/wave.svg?react";
 
 import KUTE from "kute.js";
 
@@ -152,13 +152,7 @@ export default function Intro() {
 						</h1>
 					</div>
 				</div>
-
-				{/* <img
-						style={{ backgroundImage: `url(${wave})`}}
-						alt="wave"
-						className="absolute bottom-0 right-0 intro-transition"
-					/> */}
-				<img src={wave} alt="wave" className="absolute bottom-0 right-0" />
+				<Wave className="absolute bottom-0 right-0 w-full" />
 			</section>
 		</>
 	);
