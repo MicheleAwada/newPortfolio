@@ -1,22 +1,22 @@
 import "./styles/langs.scss";
 
 import LayeredWaveUp from "../assets/langs/images/layered-waves-top.svg?react";
-import LayeredWaveBottom from "../assets/langs/images/layered-waves-bottom.svg?react";
+// import LayeredWaveBottom from "../assets/langs/images/layered-waves-bottom.svg?react";
 
-import NginxLogo from "../assets/langs/images/nginx-icon.svg";
-import TraefikLogo from "../assets/langs/images/traefikio-icon.svg";
+import NginxLogo from "../assets/langs/images/langs icons/nginx-icon.svg";
+import TraefikLogo from "../assets/langs/images/langs icons/traefikio-icon.svg";
 
-import ReactLogo1 from "../assets/langs/images/react-icon-1.svg";
-import ReactLogo2 from "../assets/langs/images/react-icon-2.svg";
+import ReactLogo1 from "../assets/langs/images/langs icons/react-icon-1.svg";
+import ReactLogo2 from "../assets/langs/images/langs icons/react-icon-2.svg";
 
-import Tailwind1 from "../assets/langs/images/tailwind-1.svg";
-import Tailwind2 from "../assets/langs/images/tailwind-2.svg";
+import Tailwind1 from "../assets/langs/images/langs icons/tailwind-1.svg";
+import Tailwind2 from "../assets/langs/images/langs icons/tailwind-2.svg";
 
-import Django1 from "../assets/langs/images/django-1.svg";
-import Django2 from "../assets/langs/images/django-2.svg";
+import Django1 from "../assets/langs/images/langs icons/django-1.svg";
+import Django2 from "../assets/langs/images/langs icons/django-2.svg";
 
-import Python1 from "../assets/langs/images/python-1.svg";
-import Python2 from "../assets/langs/images/python-2.svg";
+import Python1 from "../assets/langs/images/langs icons/python-1.svg";
+import Python2 from "../assets/langs/images/langs icons/python-2.svg";
 
 export default function Langs() {
 	const languages_info = [
