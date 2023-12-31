@@ -28,7 +28,8 @@ function isMobile() {
 export default function Contact({ simpleAddMessage }) {
 	const actionData = useActionData();
 	const navigation = useNavigation();
-	const showSpinner = navigation.state === "submitting";
+	const showSpinner =
+		navigation.state === "submitting" && navigation.location.pathname === "/";
 	const formRef = useRef();
 	function cancelForm() {
 		formRef.current.reset();
