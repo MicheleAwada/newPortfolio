@@ -54,14 +54,14 @@ export default function Project() {
 			selected: {
 				title: (
 					<>
-						Mug<span className="font-medium text-sm"> Recommened</span>
+						Mug<span className="font-medium text-sm"> Recommended</span>
 					</>
 				),
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
-						A lightning fast fully spa application. With modern complex
+						A lightning fast fully SPA application. With modern complex
 						features. Frontend built on react and backend built on django. With
-						modern quick restAPIs and one tap google authentications.
+						modern quick REST APIs and one tap Google authentications.
 					</p>
 				),
 				button: (
@@ -87,8 +87,7 @@ export default function Project() {
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg lg:leading-8">
 						You are suddenly transformed into a pixelated chicken! You must eat
 						all the worms, strawberries and bananas. However! Beware of the fox
-						and the hawk trying to eat you! Survive as long as possible,{" "}
-						<span className="font-medium">you don't die ;D</span> .
+						and the hawk trying to eat you! Survive as long as possible.
 					</p>
 				),
 				button: (
@@ -139,15 +138,14 @@ export default function Project() {
 				),
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-xs sm:text-sm md:text-md lg:text-lg">
-						Do you like all your dogs, But fear buying them allergic food on
+						Do you like your dogs, But fear buying them allergic food by
 						accident?
 						<br />
-						Friendly Furs Web E-Commerence is the anwser for you
+						Friendly Furs Web E-Commerce is the answer for you
 						<br />
-						Buy treats and snacks with{" "}
-						<span className="font-medium">automatic filtering</span> to warn you
-						about dangerous products that contain allergies for your all your
-						dogs
+						Buy treats and snacks with
+						<span className="font-medium"> automatic filtering</span> to warn
+						you about dangerous products that contain allergies for your dogs
 					</p>
 				),
 				button: (
