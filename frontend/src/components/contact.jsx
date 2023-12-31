@@ -2,13 +2,18 @@ import "./styles/contact.scss";
 
 import Wave from "../assets/contact/images/wave.svg?react";
 import email_icon from "../assets/contact/images/email.svg";
+import spinner_icon from "../assets/contact/images/spinner.svg";
+
 import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 
+import { useNavigation } from "react-router-dom";
+
 import { contact } from "../api";
 
 export async function action({ request, params }) {
+	console.log("once");
 	const formData = await request.formData();
 	const response = await contact(formData);
 	return response;
@@ -22,6 +27,8 @@ function isMobile() {
 
 export default function Contact({ simpleAddMessage }) {
 	const actionData = useActionData();
+	const navigation = useNavigation();
+	const showSpinner = navigation.state === "submitting";
 	const formRef = useRef();
 	function cancelForm() {
 		formRef.current.reset();
@@ -168,6 +175,13 @@ export default function Contact({ simpleAddMessage }) {
 							/>
 						</div>
 						<Button color="dark" type="sumbit">
+							{showSpinner && (
+								<img
+									src={spinner_icon}
+									alt="spinner"
+									className="animate-spin mr-4"
+								/>
+							)}
 							Sumbit
 						</Button>
 					</Form>
