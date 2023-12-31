@@ -1,7 +1,7 @@
 import "./styles/contact.scss";
 
 import Wave from "../assets/contact/images/wave.svg?react";
-import email_icon from "../assets/contact/images/email icon.svg";
+import email_icon from "../assets/contact/images/email.svg";
 import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
@@ -206,7 +206,7 @@ export default function Contact({ simpleAddMessage }) {
 						>
 							<div className="absolute bottom-0 left-0 w-full">
 								<img
-									className="w-full aspect-square p-2 bg-gray-900 rounded-md"
+									className="w-full aspect-square p-2 bg-[#181616] rounded-md"
 									src={email_icon}
 								/>
 							</div>
