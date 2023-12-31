@@ -52,11 +52,8 @@ export default function Project() {
 		{
 			props: { className: "mini-projects mug-project bg-[#A9D5E5]" },
 			selected: {
-				title: (
-					<>
-						Mug<span className="font-medium text-sm"> Recommended</span>
-					</>
-				),
+				title: "Mug",
+				subtitle: "Recommended",
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
 						A lightning fast fully SPA application. With modern complex
@@ -78,11 +75,8 @@ export default function Project() {
 		{
 			props: { className: "mini-projects kentucky-project bg-pink" },
 			selected: {
-				title: (
-					<>
-						Kentucky Game<span className="font-medium text-sm"> Fun</span>
-					</>
-				),
+				title: "Kentucky Game",
+				subtitle: "Fun",
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg lg:leading-8">
 						You are suddenly transformed into a pixelated chicken! You must eat
@@ -100,11 +94,8 @@ export default function Project() {
 		{
 			props: { className: "mini-projects chess-project bg-purple" },
 			selected: {
-				title: (
-					<>
-						Chess VS AI<span className="font-medium text-sm"> Fun</span>
-					</>
-				),
+				title: "Chess VS AI",
+				subtitle: "Fun",
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-sm sm:text-sm md:text-md lg:text-lg">
 						Did winning your friend in Chess give you a ego boost?
@@ -127,15 +118,8 @@ export default function Project() {
 		{
 			props: { className: "mini-projects friendlyfur-project bg-dark-purple" },
 			selected: {
-				title: (
-					<>
-						Friendly Fur
-						<span className="font-medium text-xs sm:text-sm">
-							{" "}
-							First self-coded project
-						</span>
-					</>
-				),
+				title: "Friendly Fur",
+				subtitle: "First self-coded project",
 				description: (
 					<p className="description text-dark-white pl-6 px-4 sm:px-4 text-xs sm:text-sm md:text-md lg:text-lg">
 						Do you like your dogs, But fear buying them allergic food by
@@ -242,10 +226,13 @@ export default function Project() {
 														}}
 													/>
 												)}
-												<div className="flex-grow">
-													<h1 className="text-dark-white text-2xl sm:text-3xl pl-2 md:pl-4 font-semibold">
+												<div className="flex-grow flex items-baseline gap-2">
+													<h1 className="inline text-dark-white text-2xl sm:text-3xl pl-2 md:pl-4 font-semibold whitespace-nowrap">
 														{fullyOpened ? info.selected.title : ""}
 													</h1>
+													<p className="inline font-medium text-dark-white text-xs sm:text-sm">
+														{fullyOpened ? info.selected.subtitle : ""}
+													</p>
 												</div>
 											</div>
 											<div className="flex-grow">
