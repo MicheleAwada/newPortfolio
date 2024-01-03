@@ -90,8 +90,6 @@ function Bubble(props) {
 		};
 	}, []);
 
-	const fill_color = "#E26EE5";
-
 	return (
 		<svg
 			className={className + " "}
@@ -107,14 +105,14 @@ function Bubble(props) {
 				<path
 					id="blob1"
 					d="M216.6 -57.5C242.9 10.7 200.5 114.2 134.6 154.9C68.7 195.6 -20.8 173.7 -91.7 122.9C-162.6 72.2 -214.9 -7.3 -196.5 -64.6C-178.2 -121.9 -89.1 -156.9 3 -157.9C95.1 -158.9 190.2 -125.8 216.6 -57.5"
-					fill={fill_color}
+					className="fill-pink"
 				></path>
 			</g>
 			<g transform="translate(444.98569844362476 277.96369917215895)">
 				<path
 					id="blob2"
 					d="M183.7 -58.9C202.5 -1.8 157.7 76.8 87.1 130.6C16.5 184.5 -79.9 213.6 -131.6 177C-183.2 140.5 -190 38.3 -160.6 -33.4C-131.2 -105.1 -65.6 -146.3 8.4 -149.1C82.4 -151.8 164.8 -116.1 183.7 -58.9"
-					fill={fill_color}
+					className="fill-pink"
 					style={{ visibility: "hidden" }}
 				></path>
 			</g>
