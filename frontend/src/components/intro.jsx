@@ -149,18 +149,30 @@ export default function Intro({ setIsLightTheme }) {
 					</div>
 					<Bubble className="absolute h-full p-6" />
 					<div className="z-10 flex flex-col gap-6">
-						<h1 className="text-2xl md:text-3xl text-dark-white inverted-text">
+						<h1
+							className={
+								"text-2xl md:text-3xl inverted-text " +
+								(isLightTheme ? "text-dark-white" : " text-gray-100")
+							}
+						>
 							Hello, I'm{" "}
 							<span className="text-pink bg-dark-white px-3 py-[0.75] rounded-full">
 								Michele
 							</span>
 						</h1>
-						<h1 className="text-2xl md:text-3xl text-dark-white inverted-text">
+						<h1
+							className={
+								"text-2xl md:text-3xl inverted-text " +
+								(isLightTheme ? "text-dark-white" : " text-gray-100")
+							}
+						>
 							a{" "}
 							<span
 								className={
 									"rounded-full px-3 py-[0.75] " +
-									(isLightTheme ? "bg-amber-400" : "bg-amber-300")
+									(isLightTheme
+										? "bg-amber-400 text-white"
+										: "bg-amber-300 text-dark-white")
 								}
 							>
 								Full Stack
