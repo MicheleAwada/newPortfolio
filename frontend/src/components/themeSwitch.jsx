@@ -5,7 +5,7 @@ export default function ThemeSwitch({ toggled, toggle }) {
 		<button
 			onClick={toggle}
 			className={
-				"moon-button rounded-md " + (toggled ? "bg-gray-300" : "bg-gray-700")
+				"moon-button rounded-md " + (toggled ? "bg-dark-white" : "bg-gray-700")
 			}
 		>
 			<div className="moon-rotate rotate-[20deg]">

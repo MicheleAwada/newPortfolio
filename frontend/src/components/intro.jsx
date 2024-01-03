@@ -138,7 +138,7 @@ export default function Intro({ setIsLightTheme }) {
 							Resume
 						</a>
 					</div>
-					<div className="absolute top-0 left-0 p-6 lg:py-8 z-10">
+					<div className="absolute top-0 left-0 p-6 lg:p-8 z-10">
 						<ThemeSwitch
 							toggled={isLightTheme}
 							toggle={() => setIsLightTheme((isLightTheme) => !isLightTheme)}
