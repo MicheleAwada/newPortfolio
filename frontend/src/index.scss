@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+	:root {
+		--color-dark-white: #F3F8FF;
+        --color-pink: #E26EE5;
+        --color-purple: #7E30E1;
+        --color-dark-purple: #49108B;
+	}	
+}
+
 :root {
 	font-family: "Montserrat";
 }

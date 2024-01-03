@@ -3,15 +3,16 @@ export default {
   content: [
 		"./index.html",
 		"./src/**/*.{js,jsx,ts,tsx}",
+		"./src/**/*.svg",
     'node_modules/flowbite-react/lib/esm/**/*.js',
 	],
   theme: {
     extend: {
       colors: {
-        "dark-purple": "#49108B",
-        "purple": "#7E30E1",
-        "pink": "#E26EE5",
-        "dark-white": "#F3F8FF",
+        "dark-white": "var(--color-dark-white)",
+        "pink": "var(--color-pink)",
+        "purple": "var(--color-purple)",
+        "dark-purple": "var(--color-dark-purple)",
       }
     },
   },
