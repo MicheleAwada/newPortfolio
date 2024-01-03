@@ -18,7 +18,11 @@ import Django2 from "../assets/langs/images/langs icons/django-2.svg";
 import Python1 from "../assets/langs/images/langs icons/python-1.svg";
 import Python2 from "../assets/langs/images/langs icons/python-2.svg";
 
+import { ThemeContext } from "../App";
+import { useContext } from "react";
+
 export default function Langs() {
+	const isLightTheme = useContext(ThemeContext);
 	const languages_info = [
 		{
 			name: "React",
@@ -34,13 +38,7 @@ export default function Langs() {
 			img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
 		},
 		{
-			name: (
-				<>
-					Java
-					<br />
-					Script
-				</>
-			),
+			name: "JavaScript",
 			img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 		},
 		{
@@ -102,7 +100,12 @@ export default function Langs() {
 				<LayeredWaveUp className="w-full h-full bg-dark-white" />
 			</div>
 			<div className="bg-pink w-full pb-16">
-				<h1 className="text-center text-white text-2xl md:text-3xl pt-4">
+				<h1
+					className={
+						"text-center text-2xl md:text-3xl pt-4 " +
+						(isLightTheme ? "text-white" : "text-gray-950")
+					}
+				>
 					Languages I{" "}
 					<span className="line-through decoration-dark-white">speak</span> code
 				</h1>
@@ -118,14 +121,18 @@ export default function Langs() {
 										className="z-10 split-left split-left-cut select-none"
 										src={info.img}
 										draggable={false}
+										alt={info.name}
 									/>
 								</div>
-								<p className="split-inner font-bold text-white">{info.name}</p>
+								<p className="split-inner font-bold text-dark-white">
+									{info.name}
+								</p>
 								<div className="split-right-div">
 									<img
 										className="z-10 split-right split-right-cut select-none"
 										src={info.img}
 										draggable={false}
+										alt={info.name}
 									/>
 								</div>
 							</div>
@@ -136,14 +143,18 @@ export default function Langs() {
 										className="z-10 split-left"
 										src={info.img}
 										draggable={false}
+										alt={info.name}
 									/>
 								</div>
-								<p className="split-inner font-bold text-white">{info.name}</p>
+								<p className="split-inner font-bold text-dark-white">
+									{info.name}
+								</p>
 								<div className="split-right-div">
 									<img
 										className="z-10 split-right"
 										src={info.img2}
 										draggable={false}
+										alt={info.name}
 									/>
 								</div>
 							</div>
