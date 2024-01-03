@@ -227,10 +227,10 @@ export default function Project() {
 													/>
 												)}
 												<div className="flex-grow flex items-baseline gap-2">
-													<h1 className="inline text-dark-white text-2xl sm:text-3xl pl-2 md:pl-4 font-semibold whitespace-nowrap">
+													<h1 className="title inline text-dark-white text-2xl sm:text-3xl pl-2 md:pl-4 font-semibold whitespace-nowrap">
 														{fullyOpened && info.selected.title}
 													</h1>
-													<p className="inline font-medium text-dark-white text-xs sm:text-sm">
+													<p className="subtitle inline font-medium text-dark-white text-xs sm:text-sm">
 														{fullyOpened && info.selected.subtitle}
 													</p>
 												</div>
