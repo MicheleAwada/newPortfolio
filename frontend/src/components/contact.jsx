@@ -254,7 +254,13 @@ export default function Contact({ simpleAddMessage }) {
 							</div>
 						</a>
 					</div>
-					<p className="text-center text-white">Email: info@micheleawada.com</p>
+					<p
+						className={
+							"text-center " + (isLightTheme ? "text-white" : "text-gray-300")
+						}
+					>
+						Email: info@micheleawada.com
+					</p>
 				</div>
 			</div>
 		</div>
