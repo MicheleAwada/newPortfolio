@@ -10,9 +10,8 @@ $color-dark-purple: #49108b;
 
 $dark-color-dark-white: #2e313c;
 $dark-color-pink: rgb(208, 62, 213);
-$dark-color-purple: #6529b4;
-// $dark-color-dark-purple: #542b83;
-$dark-color-dark-purple: lighten($color-dark-purple, 4%);
+$dark-color-purple: #6e2ec2;
+$dark-color-dark-purple: lighten($color-dark-purple, 6%);
 
 @layer base {
 	:root {

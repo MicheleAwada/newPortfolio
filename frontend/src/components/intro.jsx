@@ -160,7 +160,7 @@ export default function Intro({ setIsLightTheme }) {
 							<span
 								className={
 									"rounded-full px-3 py-[0.75] " +
-									(isLightTheme ? "bg-amber-400" : "bg-amber-600")
+									(isLightTheme ? "bg-amber-400" : "bg-amber-300")
 								}
 							>
 								Full Stack
