@@ -12,11 +12,17 @@
 		--color-pink: #e26ee5;
 		--color-purple: #7e30e1;
 		--color-dark-purple: #49108b;
+		font-family: "Montserrat";
 	}
-}
-
-:root {
-	font-family: "Montserrat";
+	:root[data-theme="dark"] {
+		--color-dark-white: #223;
+		--color-dark-white-to-pink-1: #422250;
+		--color-dark-white-to-pink-2: #62226d;
+		--color-dark-white-to-pink-3: #82228a;
+		--color-pink: #a222a7;
+		--color-purple: #5c22a8;
+		--color-dark-purple: #411673;
+	}
 }
 
 #root,
