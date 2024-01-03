@@ -168,7 +168,7 @@ export default function Contact({ simpleAddMessage }) {
 								id="message-title"
 								name="title"
 								type="text"
-								placeholder="Hiring Oppurtunity"
+								placeholder="Hiring Opportunity"
 							/>
 						</div>
 						<div className="pb-4 md:pb-8">
@@ -188,7 +188,7 @@ export default function Contact({ simpleAddMessage }) {
 								placeholder="Hello..."
 							/>
 						</div>
-						<Button color="dark" type="sumbit" disabled={showSpinner}>
+						<Button color="dark" type="submit" disabled={showSpinner}>
 							{showSpinner && (
 								<img
 									src={spinner_icon}
@@ -196,7 +196,7 @@ export default function Contact({ simpleAddMessage }) {
 									className="animate-spin mr-4"
 								/>
 							)}
-							Sumbit
+							Submit
 						</Button>
 					</Form>
 				</div>
