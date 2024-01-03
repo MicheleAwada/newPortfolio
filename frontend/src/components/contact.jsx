@@ -7,11 +7,13 @@ import spinner_icon from "../assets/contact/images/spinner.svg";
 
 import { Form, useActionData } from "react-router-dom";
 import { Button, Label, TextInput, Checkbox, Textarea } from "flowbite-react";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { useNavigation } from "react-router-dom";
 
 import { contact } from "../api";
+
+import { ThemeContext } from "../app";
 
 export async function action({ request, params }) {
 	console.log("once");
@@ -27,6 +29,7 @@ function isMobile() {
 }
 
 export default function Contact({ simpleAddMessage }) {
+	const isLightTheme = useContext(ThemeContext);
 	const actionData = useActionData();
 	const navigation = useNavigation();
 	const showSpinner =
@@ -101,7 +104,12 @@ export default function Contact({ simpleAddMessage }) {
 			<Wave className="w-full bg-pink" />
 			<div className="bg-purple w-full px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
 				<div className="w-full">
-					<h1 className="pt-4 pb-12 text-center text-white text-2xl md:text-3xl font-bold">
+					<h1
+						className={
+							"pt-4 pb-12 text-center text-2xl md:text-3xl font-bold " +
+							(isLightTheme ? "text-white" : "text-gray-200")
+						}
+					>
 						Lets get in Touch
 					</h1>
 					<Form
@@ -113,7 +121,9 @@ export default function Contact({ simpleAddMessage }) {
 							<div className="flex-grow">
 								<div className="mb-1 block">
 									<Label
-										className="text-white"
+										className={
+											isLightTheme ? "text-white" : "dark:text-gray-200"
+										}
 										htmlFor="name"
 										value="Your Name *"
 									/>
@@ -129,7 +139,9 @@ export default function Contact({ simpleAddMessage }) {
 							<div className="flex-grow">
 								<div className="mb-1 block">
 									<Label
-										className="text-white"
+										className={
+											isLightTheme ? "text-white" : "dark:text-gray-200"
+										}
 										htmlFor="email"
 										value="Your Email *"
 									/>
@@ -146,7 +158,7 @@ export default function Contact({ simpleAddMessage }) {
 						<div>
 							<div className="mb-1 block">
 								<Label
-									className="text-white"
+									className={isLightTheme ? "text-white" : "dark:text-gray-200"}
 									htmlFor="message-title"
 									value="Message's Title *"
 								/>
@@ -162,7 +174,7 @@ export default function Contact({ simpleAddMessage }) {
 						<div className="pb-4 md:pb-8">
 							<div className="mb-1 block">
 								<Label
-									className="text-white"
+									className={isLightTheme ? "text-white" : "dark:text-gray-200"}
 									htmlFor="message-body"
 									value="Message's Body"
 								/>
@@ -188,9 +200,21 @@ export default function Contact({ simpleAddMessage }) {
 						</Button>
 					</Form>
 				</div>
-				<p className="text-white text-2xl text-center xl:pt-8">Or</p>
+				<p
+					className={
+						"text-2xl text-center xl:pt-8 " +
+						(isLightTheme ? "text-white" : "text-gray-200")
+					}
+				>
+					Or
+				</p>
 				<div>
-					<h1 className="pt-4 pb-4 text-center text-white text-2xl md:text-3xl font-semibold">
+					<h1
+						className={
+							"pt-4 pb-4 text-center text-2xl md:text-3xl font-semibold " +
+							(isLightTheme ? "text-white" : "text-gray-200")
+						}
+					>
 						Contact through my socials
 					</h1>
 					<div className="flex justify-center gap-12 pt-12 pb-8">
