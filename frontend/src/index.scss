@@ -14,7 +14,7 @@
 		--color-dark-purple: #49108b;
 		font-family: "Montserrat";
 	}
-	:root[data-theme="dark"] {
+	:root.dark {
 		--color-dark-white: #223;
 		--color-dark-white-to-pink-1: #422250;
 		--color-dark-white-to-pink-2: #62226d;

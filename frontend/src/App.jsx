@@ -6,6 +6,8 @@ import Contact from "./components/contact";
 import RenderMessages, { getSimpleAddMessages } from "./components/messages";
 import { useEffect, useState, createContext, useContext } from "react";
 
+import { DarkThemeToggle, Flowbite } from "flowbite-react";
+
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
 
 	useEffect(() => {
 		const root = document.documentElement;
-		root.setAttribute("data-theme", isLightTheme ? "light" : "dark");
+		root.setAttribute("class", isLightTheme ? "light" : "dark");
 	}, [isLightTheme]);
 	return (
 		<ThemeContext.Provider value={isLightTheme}>
