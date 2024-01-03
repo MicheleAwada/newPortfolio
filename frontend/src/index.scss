@@ -3,25 +3,52 @@
 @tailwind components;
 @tailwind utilities;
 
+$color-dark-white: #f3f8ff;
+$color-pink: #e26ee5;
+$color-purple: #7e30e1;
+$color-dark-purple: #49108b;
+
+$dark-color-dark-white: #2e313c;
+$dark-color-pink: rgb(208, 62, 213);
+$dark-color-purple: #6529b4;
+// $dark-color-dark-purple: #542b83;
+$dark-color-dark-purple: lighten($color-dark-purple, 4%);
+
 @layer base {
 	:root {
-		--color-dark-white: #f3f8ff;
-		--color-dark-white-to-pink-1: #d3dfff;
-		--color-dark-white-to-pink-2: #c5c1ff;
-		--color-dark-white-to-pink-3: #cc9dfb;
-		--color-pink: #e26ee5;
-		--color-purple: #7e30e1;
-		--color-dark-purple: #49108b;
+		--color-dark-white: #{$color-dark-white};
+		--color-pink: #{$color-pink};
+
+		--color-dark-white-to-pink-1: #{mix($color-dark-white, $color-pink, 75%)};
+		--color-dark-white-to-pink-2: #{mix($color-dark-white, $color-pink, 50%)};
+		--color-dark-white-to-pink-3: #{mix($color-dark-white, $color-pink, 25%)};
+
+		--color-purple: #{$color-purple};
+		--color-dark-purple: #{$color-dark-purple};
 		font-family: "Montserrat";
 	}
 	:root.dark {
-		--color-dark-white: #272a38;
-		--color-dark-white-to-pink-1: #422250;
-		--color-dark-white-to-pink-2: #62226d;
-		--color-dark-white-to-pink-3: #82228a;
-		--color-pink: #a222a7;
-		--color-purple: #5c22a8;
-		--color-dark-purple: #411673;
+		--color-dark-white: #{$dark-color-dark-white};
+		--color-pink: #{$dark-color-pink};
+
+		--color-dark-white-to-pink-1: #{mix(
+				$dark-color-dark-white,
+				$dark-color-pink,
+				75%
+			)};
+		--color-dark-white-to-pink-2: #{mix(
+				$dark-color-dark-white,
+				$dark-color-pink,
+				50%
+			)};
+		--color-dark-white-to-pink-3: #{mix(
+				$dark-color-dark-white,
+				$dark-color-pink,
+				25%
+			)};
+
+		--color-purple: #{$dark-color-purple};
+		--color-dark-purple: #{$dark-color-dark-purple};
 	}
 }
 
@@ -51,11 +78,6 @@ html {
 		font-size: 16px;
 	}
 }
-
-$dark-purple: #49108b;
-$purple: #7e30e1;
-$pink: #e26ee5;
-$dark-white: #f3f8ff;
 
 * {
 	margin: 0;
