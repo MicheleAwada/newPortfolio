@@ -3,14 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
 	:root {
-		--color-dark-white: #F3F8FF;
-        --color-pink: #E26EE5;
-        --color-purple: #7E30E1;
-        --color-dark-purple: #49108B;
-	}	
+		--color-dark-white: #f3f8ff;
+		--color-dark-white-to-pink-1: #d3dfff;
+		--color-dark-white-to-pink-2: #c5c1ff;
+		--color-dark-white-to-pink-3: #cc9dfb;
+		--color-pink: #e26ee5;
+		--color-purple: #7e30e1;
+		--color-dark-purple: #49108b;
+	}
 }
 
 :root {
