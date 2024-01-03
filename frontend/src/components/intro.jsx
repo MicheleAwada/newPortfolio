@@ -1,12 +1,13 @@
 import "./styles/intro.scss";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Wave from "../assets/intro/images/wave.svg?react";
 
 import KUTE from "kute.js";
 
 import resume from "/resume.pdf?url";
+import { ThemeContext } from "../App";
 
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
@@ -120,6 +121,7 @@ function Bubble(props) {
 	);
 }
 export default function Intro() {
+	const isLightTheme = useContext(ThemeContext);
 	return (
 		<>
 			<section className="bg-dark-purple w-full h-[38rem] relative">
@@ -135,15 +137,20 @@ export default function Intro() {
 					</div>
 					<Bubble className="absolute h-full p-6" />
 					<div className="z-10 flex flex-col gap-6">
-						<h1 className="text-2xl md:text-3xl text-white inverted-text">
+						<h1 className="text-2xl md:text-3xl text-dark-white inverted-text">
 							Hello, I'm{" "}
-							<span className="text-pink bg-white px-3 py-[0.75] rounded-full">
+							<span className="text-pink bg-dark-white px-3 py-[0.75] rounded-full">
 								Michele
 							</span>
 						</h1>
-						<h1 className="text-2xl md:text-3xl text-white inverted-text">
+						<h1 className="text-2xl md:text-3xl text-dark-white inverted-text">
 							a{" "}
-							<span className="bg-amber-400 rounded-full px-3 py-[0.75]">
+							<span
+								className={
+									"rounded-full px-3 py-[0.75] " +
+									(isLightTheme ? "bg-amber-400" : "bg-amber-600")
+								}
+							>
 								Full Stack
 							</span>{" "}
 							Developer
