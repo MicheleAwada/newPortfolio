@@ -256,7 +256,7 @@ export default function Contact({ simpleAddMessage }) {
 					</div>
 					<p
 						className={
-							"text-center " + (isLightTheme ? "text-white" : "text-gray-300")
+							"text-center " + (isLightTheme ? "text-white" : "text-gray-200")
 						}
 					>
 						Email: info@micheleawada.com
