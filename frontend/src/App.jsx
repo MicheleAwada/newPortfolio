@@ -15,18 +15,28 @@ function App() {
 	const [messages, setMessages] = useState({});
 	const simpleAddMessage = getSimpleAddMessages(messages, setMessages);
 
-	const [isLightTheme, setIsLightTheme] = useState(true);
+	const [isLightTheme, setIsLightTheme] = useState(null);
 
 	useEffect(() => {
-		const prefersDarkMode =
+		const localStorageThemeExists = localStorage.getItem("theme") !== null;
+		const localStorageTheme = localStorage.getItem("theme") === "true";
+		const mediaPrefersDarkMode =
 			window.matchMedia &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches;
-		setIsLightTheme(!prefersDarkMode);
+		const mediaPrefersLightMode = !mediaPrefersDarkMode;
+
+		const finalPreference = localStorageThemeExists
+			? localStorageTheme
+			: mediaPrefersLightMode;
+		setIsLightTheme(finalPreference);
 	}, []);
 
 	useEffect(() => {
-		const root = document.documentElement;
-		root.setAttribute("class", isLightTheme ? "light" : "dark");
+		if (isLightTheme !== null) {
+			const root = document.documentElement;
+			root.setAttribute("class", isLightTheme ? "light" : "dark");
+			localStorage.setItem("theme", isLightTheme);
+		}
 	}, [isLightTheme]);
 
 	return (
