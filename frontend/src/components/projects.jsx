@@ -1,13 +1,16 @@
 import "./styles/projects.scss";
 
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { IoMdArrowBack } from "react-icons/io";
 
 import states from "./etc/projects/states";
 
+import { ThemeContext } from "../App";
+
 export default function Project() {
+	const isLightTheme = useContext(ThemeContext);
 	const [projectsType, setProjectsType] = useState(0);
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [prevSelectedProject, setPrevSelectedProject] = useState(null);
@@ -160,10 +163,20 @@ export default function Project() {
 		<div className="bg-dark-white w-full flex items-center justify-center">
 			<div className="flex-col items-center my-20">
 				<div className="mb-16 flex flex-col gap-2">
-					<h1 className="text-center text-2xl md:text-3xl text-dark-purple font-medium">
+					<h1
+						className={
+							"text-center text-2xl md:text-3xl font-medium " +
+							(isLightTheme ? "text-dark-purple" : "text-gray-100")
+						}
+					>
 						My Projects
 					</h1>
-					<p className="text-center text-sm text-dark-purple font-light">
+					<p
+						className={
+							"text-center text-sm font-light " +
+							(isLightTheme ? "text-dark-purple" : "text-gray-100")
+						}
+					>
 						Click a colour!
 					</p>
 				</div>
