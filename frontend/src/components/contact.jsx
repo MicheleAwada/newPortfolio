@@ -2,6 +2,7 @@ import "./styles/contact.scss";
 
 import Wave from "../assets/contact/images/wave.svg?react";
 import email_icon from "../assets/contact/images/email.svg";
+import EmailIconComponent from "../assets/contact/images/email.svg?react";
 import spinner_icon from "../assets/contact/images/spinner.svg";
 
 import { Form, useActionData } from "react-router-dom";
@@ -201,6 +202,7 @@ export default function Contact({ simpleAddMessage }) {
 								<img
 									className="w-full aspect-square"
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+									alt="github"
 								/>
 							</div>
 						</a>
@@ -212,6 +214,7 @@ export default function Contact({ simpleAddMessage }) {
 								<img
 									className="w-full aspect-square"
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+									alt="linkedin"
 								/>
 							</div>
 						</a>
@@ -220,9 +223,9 @@ export default function Contact({ simpleAddMessage }) {
 							className="jump-child-on-hover w-14 aspect-square relative"
 						>
 							<div className="absolute bottom-0 left-0 w-full">
-								<img
+								<EmailIconComponent
 									className="w-full aspect-square p-2 bg-[#181616] rounded-md"
-									src={email_icon}
+									alt="email"
 								/>
 							</div>
 						</a>
