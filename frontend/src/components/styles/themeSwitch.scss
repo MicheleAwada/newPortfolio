@@ -1,0 +1,53 @@
+@use "sass:math";
+
+$moon-padding: 0.5rem;
+$moon-size: 1.5rem;
+$moon-cresent-size: math.div($moon-size, -2.5);
+
+$moon-transition: all 1s ease;
+
+$sun-color: #ffcc00;
+$moon-color-dark: #777;
+
+.moon-shape {
+	background-color: transparent;
+	width: $moon-size;
+	height: $moon-size;
+	border-radius: 50%;
+	transition: $moon-transition;
+}
+.moon-button {
+	padding: $moon-padding;
+	transition: $moon-transition;
+	&:hover {
+		.moon-shape {
+			box-shadow: inset $moon-cresent-size 0px $moon-color-dark;
+		}
+	}
+	.moon-shape {
+		box-shadow: inset $moon-size 0px $sun-color;
+	}
+}
+:root.dark {
+	.moon-button {
+		&:hover {
+			.moon-shape {
+				box-shadow: inset $moon-size 0px $sun-color;
+			}
+		}
+		.moon-shape {
+			box-shadow: inset $moon-cresent-size 0px $moon-color-dark;
+		}
+	}
+}
+
+.moon-button {
+}
+
+// .moon-rotate {
+// 	&:hover {
+// 		transform: rotate(180deg);
+// 	}
+// 	transform: rotate(0deg);
+// 	transition: all 0.5 ease;
+// }

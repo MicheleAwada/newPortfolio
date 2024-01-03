@@ -9,6 +9,8 @@ import KUTE from "kute.js";
 import resume from "/resume.pdf?url";
 import { ThemeContext } from "../App";
 
+import ThemeSwitch from "./themeSwitch";
+
 function ButtonBubble(props) {
 	const { className, ...rest } = props;
 
@@ -120,12 +122,13 @@ function Bubble(props) {
 		</svg>
 	);
 }
-export default function Intro() {
+export default function Intro({ setIsLightTheme }) {
 	const isLightTheme = useContext(ThemeContext);
 	return (
 		<>
 			<section className="bg-dark-purple w-full h-[38rem] relative">
 				<div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
+					<div className="absolute top-0 left-0 py-6 px-6 lg:py-8 lg:px-12 z-10"></div>
 					<div className="absolute top-0 right-0 py-6 px-6 lg:py-8 lg:px-12 z-10">
 						<a
 							className="px-4 py-2  text-dark-purple bg-dark-white rounded-full text-2xl font-medium"
@@ -134,6 +137,12 @@ export default function Intro() {
 						>
 							Resume
 						</a>
+					</div>
+					<div className="absolute top-0 left-0 p-6 lg:py-8 z-10">
+						<ThemeSwitch
+							toggled={isLightTheme}
+							toggle={() => setIsLightTheme((isLightTheme) => !isLightTheme)}
+						/>
 					</div>
 					<Bubble className="absolute h-full p-6" />
 					<div className="z-10 flex flex-col gap-6">

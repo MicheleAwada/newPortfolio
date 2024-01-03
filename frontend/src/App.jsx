@@ -2,6 +2,7 @@ import Intro from "./components/intro";
 import Projects from "./components/projects";
 import Langs from "./components/langs";
 import Contact from "./components/contact";
+import ThemeSwitch from "./components/themeSwitch";
 
 import RenderMessages, { getSimpleAddMessages } from "./components/messages";
 import { useEffect, useState, createContext, useContext } from "react";
@@ -27,10 +28,11 @@ function App() {
 		const root = document.documentElement;
 		root.setAttribute("class", isLightTheme ? "light" : "dark");
 	}, [isLightTheme]);
+
 	return (
 		<ThemeContext.Provider value={isLightTheme}>
 			<RenderMessages messages={messages} />
-			<Intro />
+			<Intro setIsLightTheme={setIsLightTheme} />
 			<Projects />
 			<Langs />
 			<Contact simpleAddMessage={simpleAddMessage} />
