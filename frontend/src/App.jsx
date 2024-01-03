@@ -4,7 +4,9 @@ import Langs from "./components/langs";
 import Contact from "./components/contact";
 
 import RenderMessages, { getSimpleAddMessages } from "./components/messages";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
+
+export const ThemeContext = createContext(null);
 
 function App() {
 	const [messages, setMessages] = useState({});
@@ -24,13 +26,13 @@ function App() {
 		root.setAttribute("data-theme", isLightTheme ? "light" : "dark");
 	}, [isLightTheme]);
 	return (
-		<>
+		<ThemeContext.Provider value={isLightTheme}>
 			<RenderMessages messages={messages} />
 			<Intro />
 			<Projects />
 			<Langs />
 			<Contact simpleAddMessage={simpleAddMessage} />
-		</>
+		</ThemeContext.Provider>
 	);
 }
 
