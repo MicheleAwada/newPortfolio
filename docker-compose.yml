@@ -2,6 +2,7 @@ version: "3.4"
 services:
   backend:
     container_name: portfolio_backend
+    restart: always
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -20,6 +21,7 @@ services:
   postgres:
     image: postgres:alpine
     container_name: portfolio_postgres
+    restart: always
     volumes:
       - portfolio_postgres_data:/var/lib/postgresql/data
     env_file:
@@ -29,6 +31,7 @@ services:
   nginx:
     image: nginx:alpine
     container_name: portfolio_nginx
+    restart: always
     expose:
       - 80
     volumes:
@@ -38,7 +41,7 @@ services:
       - portfolio_static:/static
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.middlewares=no-www-http@file,to-https@file"
+      - "traefik.http.routers.portfolio.middlewares=no-www@file,to-https@file"
       - "traefik.http.routers.portfolio.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`chess.micheleawada.com`) || Host(`www.chess.micheleawada.com`) || Host(`backend.micheleawada.com`)"
       - "traefik.http.routers.portfolio.entrypoints=web"
       - "traefik.http.routers.portfolio-secure.rule=Host(`micheleawada.com`) || Host(`www.micheleawada.com`) || Host(`chess.micheleawada.com`) || Host(`www.chess.micheleawada.com`) || Host(`backend.micheleawada.com`)"
