@@ -13,7 +13,7 @@ import { useNavigation } from "react-router-dom";
 
 import { contact } from "../api";
 
-import { ThemeContext } from "../app";
+import { ThemeContext } from "../App";
 
 export async function action({ request, params }) {
 	console.log("once");
