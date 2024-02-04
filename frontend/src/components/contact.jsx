@@ -16,7 +16,6 @@ import { contact } from "../api";
 import { ThemeContext } from "../App";
 
 export async function action({ request, params }) {
-	console.log("once");
 	const formData = await request.formData();
 	const response = await contact(formData);
 	return response;
@@ -102,7 +101,7 @@ export default function Contact({ simpleAddMessage }) {
 	return (
 		<div className="flex flex-col items-center overflow-hidden w-full">
 			<Wave className="w-full bg-pink" />
-			<div className="bg-purple w-full px-[12vw] pb-16 flex items-center flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
+			<div className="bg-purple w-full px-[12vw] pb-16 flex items-center flex-col gap-32">
 				<div className="w-full">
 					<h1
 						className={
@@ -200,14 +199,6 @@ export default function Contact({ simpleAddMessage }) {
 						</Button>
 					</Form>
 				</div>
-				<p
-					className={
-						"text-2xl text-center xl:pt-8 " +
-						(isLightTheme ? "text-white" : "text-gray-200")
-					}
-				>
-					Or
-				</p>
 				<div>
 					<h1
 						className={
@@ -215,7 +206,7 @@ export default function Contact({ simpleAddMessage }) {
 							(isLightTheme ? "text-white" : "text-gray-200")
 						}
 					>
-						Contact through my socials
+						Checkout my socials
 					</h1>
 					<div className="flex justify-center gap-12 pt-12 pb-8">
 						<a
@@ -242,25 +233,7 @@ export default function Contact({ simpleAddMessage }) {
 								/>
 							</div>
 						</a>
-						<a
-							href="mailto:info@micheleawada.com"
-							className="jump-child-on-hover w-14 aspect-square relative"
-						>
-							<div className="absolute bottom-0 left-0 w-full">
-								<EmailIconComponent
-									className="w-full aspect-square p-2 bg-[#181616] rounded-md"
-									alt="email"
-								/>
-							</div>
-						</a>
 					</div>
-					<p
-						className={
-							"text-center " + (isLightTheme ? "text-white" : "text-gray-200")
-						}
-					>
-						Email: info@micheleawada.com
-					</p>
 				</div>
 			</div>
 		</div>
