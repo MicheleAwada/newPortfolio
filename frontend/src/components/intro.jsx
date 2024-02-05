@@ -6,76 +6,75 @@ import Wave from "../assets/intro/images/wave.svg?react";
 
 import KUTE from "kute.js";
 
-import resume from "/resume.pdf?url";
 import { ThemeContext } from "../App";
 
 import ThemeSwitch from "./themeSwitch";
 
-function ButtonBubble(props) {
-	const { className, ...rest } = props;
+// function ButtonBubble(props) {
+// 	const { className, ...rest } = props;
 
-	useEffect(() => {
-		const tween = KUTE.fromTo(
-			"#buttonblob1",
-			{ path: "#buttonblob1" },
-			{ path: "#buttonblob2" },
-			{ repeat: Infinity, duration: 3000, yoyo: true }
-		);
-		tween.start();
+// 	useEffect(() => {
+// 		const tween = KUTE.fromTo(
+// 			"#buttonblob1",
+// 			{ path: "#buttonblob1" },
+// 			{ path: "#buttonblob2" },
+// 			{ repeat: Infinity, duration: 3000, yoyo: true }
+// 		);
+// 		tween.start();
 
-		return () => {
-			tween.stop();
-		};
-	}, []);
+// 		return () => {
+// 			tween.stop();
+// 		};
+// 	}, []);
 
-	const fill_color = "#F3F8FF";
+// 	const fill_color = "#F3F8FF";
 
-	return (
-		<a target="_blank" href="https://www.youtube.com" className={" "}>
-			<div className=" w-full h-full flex items-center justify-center relative">
-				<svg
-					className="w-[165%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-					version="1.1"
-					id="Layer_1"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlnsXlink="http://www.w3.org/1999/xlink"
-					x="0px"
-					y="0px"
-					viewBox="0 0 700 327.6"
-					style={{ enableBackground: "new 0 0 700 327.6" }}
-					xmlSpace="preserve"
-				>
-					{/* <path 
-                            id="buttonblob"
-                            d="M479.8,250.3H220.2c-47.8,0-86.5-38.7-86.5-86.5v0c0-47.8,38.7-86.5,86.5-86.5h259.6
-                            c47.8,0,86.5,38.7,86.5,86.5v0C566.3,211.6,527.6,250.3,479.8,250.3z"
-                            fill={fill_color} /> */}
-					<path
-						fill={fill_color}
-						id="buttonblob2"
-						d="M285,287.1c25,4.3,48.8,14.1,73.5,19.6c50,11.2,105.4,4,146.6-26.5c15.6-11.5,44.7-18.5,64.9-35.4
-                                    c22.9-19.1,36-49.1,36-79.7c0-27.3-11.6-53.9-30.6-73.4S531.7,59,506.1,49.5c-26.8-10-55-44.7-83.2-48.5c-54.5-7.3-89,26-165.5,25.4
-                                    c-46.2-0.4-92.3,3.6-138.5,5.4c-28.4,1.1-58.7,2.9-81.4,20c-14.2,10.7-24.3,31-15.2,46.3c11.9,20.2,45.1,15.5,60.5,33.2
-                                    c12.2,14.1,8,35.3,10.6,53.8c2.5,17.7,12.4,34.3,26.7,45c16.8,12.5,38.3,16.6,57.4,25.4c9.2,4.2,18.2,10.2,24.9,17.9
-                                    c4.6,5.2,4.5,21.1,14.3,22.8c8.8,1.5,24.3-9.4,32-10.4C260.8,284.3,273.1,285,285,287.1z"
-						style={{ visibility: "hidden" }}
-					/>
-					<g>
-						<path
-							fill={fill_color}
-							id="buttonblob1"
-							d="M479.8,250.3H220.2c-47.8,0-86.5-38.7-86.5-86.5v0c0-47.8,38.7-86.5,86.5-86.5h259.6
-                                                    c47.8,0,86.5,38.7,86.5,86.5v0C566.3,211.6,527.6,250.3,479.8,250.3z"
-						/>
-					</g>
-				</svg>
-				<p className="z-10 m-0 text-2xl text-dark-purple font-semibold">
-					Resume
-				</p>
-			</div>
-		</a>
-	);
-}
+// 	return (
+// 		<a target="_blank" href="https://www.youtube.com" className={" "}>
+// 			<div className=" w-full h-full flex items-center justify-center relative">
+// 				<svg
+// 					className="w-[165%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+// 					version="1.1"
+// 					id="Layer_1"
+// 					xmlns="http://www.w3.org/2000/svg"
+// 					xmlnsXlink="http://www.w3.org/1999/xlink"
+// 					x="0px"
+// 					y="0px"
+// 					viewBox="0 0 700 327.6"
+// 					style={{ enableBackground: "new 0 0 700 327.6" }}
+// 					xmlSpace="preserve"
+// 				>
+// 					{/* <path 
+//                             id="buttonblob"
+//                             d="M479.8,250.3H220.2c-47.8,0-86.5-38.7-86.5-86.5v0c0-47.8,38.7-86.5,86.5-86.5h259.6
+//                             c47.8,0,86.5,38.7,86.5,86.5v0C566.3,211.6,527.6,250.3,479.8,250.3z"
+//                             fill={fill_color} /> */}
+// 					<path
+// 						fill={fill_color}
+// 						id="buttonblob2"
+// 						d="M285,287.1c25,4.3,48.8,14.1,73.5,19.6c50,11.2,105.4,4,146.6-26.5c15.6-11.5,44.7-18.5,64.9-35.4
+//                                     c22.9-19.1,36-49.1,36-79.7c0-27.3-11.6-53.9-30.6-73.4S531.7,59,506.1,49.5c-26.8-10-55-44.7-83.2-48.5c-54.5-7.3-89,26-165.5,25.4
+//                                     c-46.2-0.4-92.3,3.6-138.5,5.4c-28.4,1.1-58.7,2.9-81.4,20c-14.2,10.7-24.3,31-15.2,46.3c11.9,20.2,45.1,15.5,60.5,33.2
+//                                     c12.2,14.1,8,35.3,10.6,53.8c2.5,17.7,12.4,34.3,26.7,45c16.8,12.5,38.3,16.6,57.4,25.4c9.2,4.2,18.2,10.2,24.9,17.9
+//                                     c4.6,5.2,4.5,21.1,14.3,22.8c8.8,1.5,24.3-9.4,32-10.4C260.8,284.3,273.1,285,285,287.1z"
+// 						style={{ visibility: "hidden" }}
+// 					/>
+// 					<g>
+// 						<path
+// 							fill={fill_color}
+// 							id="buttonblob1"
+// 							d="M479.8,250.3H220.2c-47.8,0-86.5-38.7-86.5-86.5v0c0-47.8,38.7-86.5,86.5-86.5h259.6
+//                                                     c47.8,0,86.5,38.7,86.5,86.5v0C566.3,211.6,527.6,250.3,479.8,250.3z"
+// 						/>
+// 					</g>
+// 				</svg>
+// 				<p className="z-10 m-0 text-2xl text-dark-purple font-semibold">
+// 					Resume
+// 				</p>
+// 			</div>
+// 		</a>
+// 	);
+// }
 
 function Bubble(props) {
 	const { className, ...rest } = props;
@@ -129,18 +128,6 @@ export default function Intro({ setIsLightTheme }) {
 			<section className="bg-dark-purple w-full h-[38rem] relative">
 				<div className=" w-full h-[30rem] flex justify-center items-center absolute overflow-hidden">
 					<div className="absolute top-0 left-0 py-6 px-6 lg:py-8 lg:px-12 z-10"></div>
-					<div className="absolute top-0 right-0 py-6 px-6 lg:py-8 lg:px-12 z-10">
-						<a
-							className={
-								"px-4 py-2 bg-dark-white rounded-full text-2xl font-medium " +
-								(isLightTheme ? "text-dark-purple" : "text-pink")
-							}
-							target="_blank"
-							href={resume}
-						>
-							Resume
-						</a>
-					</div>
 					<div className="absolute top-0 left-0 p-6 lg:p-8 z-10">
 						<ThemeSwitch
 							toggled={isLightTheme}
